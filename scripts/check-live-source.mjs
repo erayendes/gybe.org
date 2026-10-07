@@ -12,8 +12,28 @@ const expected = [
   },
   {
     artist: "Godspeed You! Black Emperor",
+    date: "24 Nov 2026",
+    city: "Paulo",
+  },
+  {
+    artist: "Godspeed You! Black Emperor",
     date: "26 Nov 2026",
     city: "Santiago",
+  },
+  {
+    artist: "Godspeed You! Black Emperor",
+    date: "21 Feb 2027",
+    city: "Quebec City",
+  },
+  {
+    artist: "Godspeed You! Black Emperor",
+    date: "26 Feb 2027",
+    city: "Toronto",
+  },
+  {
+    artist: "Godspeed You! Black Emperor",
+    date: "27 Feb 2027",
+    city: "Toronto",
   },
 ];
 

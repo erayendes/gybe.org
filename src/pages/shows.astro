@@ -20,6 +20,7 @@ const structuredData = shows.dates.map((show) => ({
   offers: {
     "@type": "Offer",
     url: show.ticketUrl,
+    ...(show.soldOut && { availability: "https://schema.org/SoldOut" }),
   },
   organizer: {
     "@type": "Organization",
@@ -72,7 +73,7 @@ const structuredData = shows.dates.map((show) => ({
           <tr>
             <td>{show.displayDate}</td>
             <td>{show.city}, {show.country}</td>
-            <td>{show.venue}</td>
+            <td>{show.venue}{show.soldOut && " (sold out)"}</td>
             <td><a href={show.ticketUrl} target="_blank" rel="noopener noreferrer">ticket/source</a></td>
           </tr>
         ))}

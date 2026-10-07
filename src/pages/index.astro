@@ -66,7 +66,7 @@ const structuredData = [
           <div class="archive-row">
             <span class="meta">{show.displayDate}</span>
             <a class="archive-row__title" href={show.ticketUrl} target="_blank" rel="noopener noreferrer">{show.city}, {show.country}</a>
-            <span class="archive-row__note">{show.venue}</span>
+            <span class="archive-row__note">{show.venue}{show.soldOut && " (sold out)"}</span>
           </div>
         ))}
       </div>
