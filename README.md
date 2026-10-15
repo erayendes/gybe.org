@@ -28,6 +28,6 @@ npm run build
 
 ## Show Updates
 
-`src/data/shows.ts` is manually reviewed against Constellation's live page.
+`src/data/shows.ts` is checked weekly against Constellation's live page and published automatically.
 
-The planned free automation is included in `.github/workflows/check-live-source.yml`: it runs weekly and opens an issue when the official source appears to change. It does not publish changes automatically.
+The planned free automation is included in `.github/workflows/check-live-source.yml`: it runs weekly and opens an issue when the official source appears to change.

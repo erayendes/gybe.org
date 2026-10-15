@@ -1,8 +1,8 @@
 export const shows = {
   source: "Constellation Live",
   sourceUrl: "https://cstrecords.com/pages/live",
-  lastChecked: "2026-10-07",
-  updateMode: "Manual in v1. Planned monitor: weekly GitHub Action opens an issue when the source changes.",
+  lastChecked: "2026-10-15",
+  updateMode: "Checked weekly against Constellation Live and published automatically.",
   dates: [
     {
       date: "2026-11-21",
@@ -44,6 +44,16 @@ export const shows = {
       organizer: "Fauna Producciones",
       organizerUrl: "https://www.puntoticket.com/faunaprimavera",
       ticketUrl: "https://www.puntoticket.com/faunaprimavera"
+    },
+    {
+      date: "2027-02-20",
+      displayDate: "20 Feb 2027",
+      city: "Quebec City",
+      country: "Canada",
+      venue: "Théâtre Capitole (Phoque Off)",
+      organizer: "Phoque Off",
+      organizerUrl: "https://www.ticketmaster.ca/event/31006547EE7BB476",
+      ticketUrl: "https://www.ticketmaster.ca/event/31006547EE7BB476"
     },
     {
       date: "2027-02-21",
