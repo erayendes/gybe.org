@@ -1,6 +1,6 @@
 User-agent: *
 Allow: /
-Content-Signal: search=yes, ai-input=yes
+Content-Signal: search=yes, ai-input=yes, ai-train=yes
 
 # LLM index: https://gybe.org/llms.txt
 # LLM full text: https://gybe.org/llms-full.txt
