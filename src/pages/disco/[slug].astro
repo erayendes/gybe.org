@@ -2,6 +2,7 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import AlbumEmbed from "../../components/AlbumEmbed.astro";
 import { albums } from "../../data/albums";
+import { bandRef } from "../../data/band";
 
 export function getStaticPaths() {
   return albums.map((album) => ({
@@ -34,16 +35,14 @@ const streamingLinks: SourceLink[] = [
   { label: "Apple Music", url: album.links?.appleMusic },
 ].filter((source): source is SourceLink => Boolean(source.url));
 const sourceLinks = [...officialSourceLinks, ...streamingLinks];
-const trackText = album.tracks.length === 1 ? "one listed piece" : `${album.tracks.length} listed pieces`;
 const officialSourceText = officialSourceLinks.length > 0
-  ? `The official source area points to ${officialSourceLinks.map((source) => source.label).join(" and ")}.`
-  : "No current primary label or artist source is listed for this entry.";
-const streamingSourceText = streamingLinks.length > 0
-  ? `Streaming links are separated from those primary sources because they are listening options, not release documentation.`
-  : "Streaming links are separated from primary sources when available; this entry currently keeps the page focused on release documentation.";
+  ? `Official release information is available from ${officialSourceLinks.map((source) => source.label).join(" and ")}, linked below.`
+  : "No current label or artist page is listed for this entry.";
+const trackListText = album.tracks.length === 1
+  ? `It contains one listed piece: ${album.tracks[0]}.`
+  : `It contains ${album.tracks.length} listed pieces: ${album.tracks.join(", ")}.`;
 const archiveContext = [
-  `${album.title} is archived here as a ${album.kind} from ${album.year}, with label context recorded as ${album.label}. This page is written as a compact reference entry rather than a review: it keeps the release identity, track list, cover image, edition notes, and source links visible in one place. The short summary above gives the quick orientation, while this context section explains why the record belongs in the discography and how the entry should be read.`,
-  `For SEO and archive clarity, the page separates facts that identify the record from links that help verify or hear it. The track list has ${trackText}, and the notes below preserve release, edition, or historical details that affect how the record is understood. ${officialSourceText} ${streamingSourceText} When facts change or a better primary source appears, the source section should be updated before the surrounding prose is expanded.`
+  `${album.title} is a ${album.year} ${album.kind} by Godspeed You! Black Emperor, released on ${album.label}. ${trackListText} ${officialSourceText}`,
 ];
 const structuredData = [
   {
@@ -52,10 +51,7 @@ const structuredData = [
     name: album.title,
     url: `https://gybe.org/disco/${album.slug}/`,
     image: `https://gybe.org${album.image}`,
-    byArtist: {
-      "@type": "MusicGroup",
-      name: "Godspeed You! Black Emperor",
-    },
+    byArtist: bandRef,
     datePublished: album.year,
     recordLabel: album.label,
     description: album.summary,
@@ -106,7 +102,7 @@ const structuredData = [
         <h1 class="page-title">{album.title}</h1>
         <p class="deck">{album.summary}</p>
 
-        <h2>archive context</h2>
+        <h2>about this record</h2>
         {archiveContext.map((paragraph) => <p>{paragraph}</p>)}
 
         <h2>record data</h2>

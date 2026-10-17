@@ -1,10 +1,86 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { albums } from "../data/albums";
+import { band } from "../data/band";
+import { members } from "../data/members";
+import { shows } from "../data/shows";
+
+const newest = albums[albums.length - 1];
+const currentMembers = members.filter((member) => member.status === "current");
+const firstShow = shows.dates[0];
+const lastShow = shows.dates[shows.dates.length - 1];
+const touringAnswer = firstShow
+  ? `Yes. As of ${shows.lastChecked}, gybe.org lists ${shows.dates.length} upcoming Godspeed You! Black Emperor dates, from ${firstShow.city} on ${firstShow.displayDate} to ${lastShow.city} on ${lastShow.displayDate}. Dates are copied from ${shows.source}; confirm tickets and changes on the official pages linked from the shows list.`
+  : `No upcoming Godspeed You! Black Emperor dates were listed on ${shows.source} when gybe.org last checked on ${shows.lastChecked}. The shows page is checked weekly and updated when new dates appear.`;
+
+const faq = [
+  {
+    question: "What is Godspeed You! Black Emperor?",
+    answer: "Godspeed You! Black Emperor (GY!BE) is an instrumental post-rock collective from Montreal, Canada, formed in 1994 by Efrim Menuck, Mike Moya, and Mauro Pezzente. The band is known for long-form pieces built from guitars, strings, drones, field recordings, and tape loops. It went on hiatus in 2003, returned in 2010, and releases its records through Constellation.",
+  },
+  {
+    question: "Who are the members of Godspeed You! Black Emperor?",
+    answer: `gybe.org lists ${currentMembers.length} current members: ${currentMembers.map((member) => member.name).join(", ")}. The lineup has changed many times since 1994, and the members page also covers former members and the projectionists behind the band's live film work.`,
+  },
+  {
+    question: "Where does the name Godspeed You! Black Emperor come from?",
+    answer: "The name comes from God Speed You! Black Emperor, a 1976 black-and-white Japanese documentary by Mitsuo Yanagimachi about a Bosozoku motorcycle gang in Tokyo. The band has written its name in several forms over the years; Godspeed You! Black Emperor is the main modern form and GY!BE is the common abbreviation.",
+  },
+  {
+    question: "What was Godspeed You! Black Emperor's first album?",
+    answer: "The earliest release is All Lights Fucked on the Hairy Amp Drooling, a 1994 cassette made in an edition of 33 copies and officially released on Bandcamp in 2022. The first widely released album is F♯ A♯ ∞, issued by Constellation in 1997 and later by Kranky on CD.",
+  },
+  {
+    question: "What is the latest Godspeed You! Black Emperor album?",
+    answer: `The most recent record in the gybe.org discography is ${newest.title} (${newest.year}, ${newest.label}). ${newest.summary}`,
+  },
+  {
+    question: "Is Godspeed You! Black Emperor touring?",
+    answer: touringAnswer,
+  },
+  {
+    question: "Is gybe.org the official Godspeed You! Black Emperor website?",
+    answer: "No. gybe.org is an unofficial, non-commercial fan archive maintained by Eray Endes. It is not affiliated with the band, Constellation, Kranky, or any rights holder. For records, tickets, and official statements, use Constellation, the band's Bandcamp page, and the ticket links on the shows page.",
+  },
+];
+
+const structuredData = [
+  {
+    "@context": "https://schema.org",
+    ...band,
+    url: "https://gybe.org/about/",
+    description: faq[0].answer,
+    foundingDate: "1994",
+    foundingLocation: {
+      "@type": "Place",
+      name: "Montreal, Quebec, Canada",
+    },
+    genre: ["Post-rock", "Experimental rock"],
+    member: currentMembers.map((member) => ({
+      "@type": "Person",
+      name: member.name,
+      url: `https://gybe.org/members/${member.slug}/`,
+    })),
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faq.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer,
+      },
+    })),
+  },
+];
 ---
 
 <BaseLayout
   title="About Godspeed You! Black Emperor / gybe.org"
   description="Background on Godspeed You! Black Emperor, the band's name, early cassette history, and the source-minded archive approach behind gybe.org."
+  structuredData={structuredData}
 >
   <h1 class="page-title">about</h1>
   <p class="deck">
@@ -35,6 +111,14 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     <p>
       For years the cassette was discussed more as legend than as a widely heard record. In 2022, after the material surfaced online, the band officially released it through Bandcamp and confirmed its authenticity.
     </p>
+
+    <h2>quick answers</h2>
+    {faq.map((item) => (
+      <>
+        <h3>{item.question}</h3>
+        <p>{item.answer}</p>
+      </>
+    ))}
 
     <h2>archive approach</h2>
     <p>

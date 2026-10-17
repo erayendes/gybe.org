@@ -170,6 +170,12 @@ figure {
   text-transform: lowercase;
 }
 
+.content h3 {
+  font-size: 1rem;
+  line-height: 1.3;
+  margin: 28px 0 8px;
+}
+
 .deck {
   color: var(--muted);
   font-size: clamp(1rem, 2vw, 1.22rem);

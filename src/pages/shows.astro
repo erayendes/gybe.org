@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { bandRef } from "../data/band";
 import { shows } from "../data/shows";
 
 const structuredData = shows.dates.map((show) => ({
@@ -13,10 +14,7 @@ const structuredData = shows.dates.map((show) => ({
   url: show.ticketUrl,
   eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
   eventStatus: "https://schema.org/EventScheduled",
-  performer: {
-    "@type": "MusicGroup",
-    name: "Godspeed You! Black Emperor",
-  },
+  performer: bandRef,
   offers: {
     "@type": "Offer",
     url: show.ticketUrl,

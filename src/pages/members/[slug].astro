@@ -2,6 +2,7 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { members } from "../../data/members";
 import { crossingPaths } from "../../data/crossingPaths";
+import { bandRef } from "../../data/band";
 
 export function getStaticPaths() {
   return members.map((member) => ({
@@ -18,7 +19,7 @@ const related = crossingPaths.filter((item) =>
 const projectContext = member.projects.length > 0
   ? `Related projects listed here: ${member.projects.join(", ")}. These links place the member inside the wider Montreal and Constellation-adjacent network rather than treating the GY!BE lineup as an isolated roster.`
   : "No related project is currently listed for this archive entry. The page still keeps role and years active visible so the member's place in the band history is clear.";
-const archiveContext = `${member.name} is listed as a ${member.status} Godspeed You! Black Emperor member with the role recorded as ${member.role}. The years field is ${member.years}. ${projectContext}`;
+const archiveContext = `${member.name} is a ${member.status} member of Godspeed You! Black Emperor, credited with ${member.role} (${member.years}). ${projectContext}`;
 const structuredData = [
   {
     "@context": "https://schema.org",
@@ -26,10 +27,7 @@ const structuredData = [
     name: member.name,
     url: `https://gybe.org/members/${member.slug}/`,
     description: member.summary,
-    memberOf: {
-      "@type": "MusicGroup",
-      name: "Godspeed You! Black Emperor",
-    },
+    memberOf: bandRef,
     hasOccupation: member.role,
   },
   {
@@ -57,7 +55,7 @@ const structuredData = [
     <h1 class="page-title">{member.name}</h1>
     <p class="deck">{member.summary}</p>
 
-    <h2>archive context</h2>
+    <h2>about</h2>
     <p>{archiveContext}</p>
 
     {member.bio && (

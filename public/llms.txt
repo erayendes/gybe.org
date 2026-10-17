@@ -8,7 +8,7 @@ The site is not affiliated with Godspeed You! Black Emperor, Constellation, Kran
 
 ## Key pages
 
-- [About](https://gybe.org/about): overview of the band, name history, first release, and archive approach.
+- [About](https://gybe.org/about): overview of the band, name history, first release, quick answers, and archive approach.
 - [Discography](https://gybe.org/disco): record-by-record archive of albums, EPs, archival releases, track lists, notes, cover art, and official links.
 - [Shows](https://gybe.org/shows): current live-date list copied from Constellation Live and manually reviewed before publishing.
 - [Members](https://gybe.org/members): current and former members, including instrumental roles, years, status, and related projects.
@@ -24,5 +24,6 @@ The site is not affiliated with Godspeed You! Black Emperor, Constellation, Kran
 
 ## Machine-readable endpoints
 
+- Full text (discography, members, shows, side projects): https://gybe.org/llms-full.txt
 - Sitemap: https://gybe.org/sitemap.xml
 - Robots: https://gybe.org/robots.txt
