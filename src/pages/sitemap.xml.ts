@@ -22,6 +22,7 @@ const staticPages: SitemapPage[] = [
   { path: "/members/", priority: "0.8", changefreq: "monthly", lastmod: shows.lastChecked },
   { path: "/crossing-paths/", priority: "0.8", changefreq: "monthly", lastmod: shows.lastChecked },
   { path: "/contact/", priority: "0.5", changefreq: "yearly", lastmod: shows.lastChecked },
+  { path: "/llms-full.txt", priority: "0.3", changefreq: "weekly", lastmod: shows.lastChecked },
 ];
 
 const dynamicPages: SitemapPage[] = [
