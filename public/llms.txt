@@ -25,5 +25,6 @@ The site is not affiliated with Godspeed You! Black Emperor, Constellation, Kran
 ## Machine-readable endpoints
 
 - Full text (discography, members, shows, side projects): https://gybe.org/llms-full.txt
+- Short index (this file): https://gybe.org/llms.txt
 - Sitemap: https://gybe.org/sitemap.xml
 - Robots: https://gybe.org/robots.txt
