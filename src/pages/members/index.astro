@@ -4,6 +4,7 @@ import { members } from "../../data/members";
 
 const current = members.filter((member) => member.status === "current");
 const former = members.filter((member) => member.status === "former");
+const currentNames = current.map((member) => member.name).join(", ");
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "ItemList",
@@ -18,13 +19,13 @@ const structuredData = {
 ---
 
 <BaseLayout
-  title="Godspeed You! Black Emperor Members / gybe.org"
-  description="Current and former Godspeed You! Black Emperor members, roles, years active, projectionists, and related projects around the Montreal collective."
+  title="Godspeed You! Black Emperor Members: Current and Former Lineup"
+  description={`Who is in Godspeed You! Black Emperor? Current members: ${currentNames}. Plus former members, projectionists, roles, and years active.`}
   structuredData={structuredData}
 >
   <h1 class="page-title">members</h1>
   <p class="deck">
-    Current and former members, including the projectionists who shaped the live image work, with related projects linked where useful.
+    Godspeed You! Black Emperor currently has {current.length} members: {currentNames}. Below are the current lineup and {former.length} former members, including the projectionists who shaped the live image work, with roles, years active, and related projects.
   </p>
 
   <h2 class="section-title">current</h2>
