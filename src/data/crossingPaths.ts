@@ -286,6 +286,31 @@ export const crossingPaths: CrossingPath[] = [
     ]
   },
   {
+    slug: "jessica-moss",
+    members: [],
+    title: "Jessica Moss",
+    relation: "Thee Silver Mt. Zion / Black Ox Orkestar",
+    origin: "Montreal, Quebec",
+    active: "solo since 2015",
+    summary: "Montreal violinist from Thee Silver Mt. Zion and Black Ox Orkestar, now known for long-form solo performance.",
+    body: [
+      "Jessica Moss is a Montreal violinist, composer, and solo performer. She first came to prominence as a member of Thee Silver Mt. Zion and as a co-founder of Black Ox Orkestar, alongside Thierry Amar.",
+      "Since 2015 she has focused on solo work built from violin, voice, bells, loopers, and effects pedals, all played live without computers or pre-programmed sequences. Her pieces move slowly between stillness and noise, using repetition and dissonance as part of an evolving structure.",
+      "Unfolding, released by Constellation in October 2025, grew out of years of touring and ends with a choral piece built on the phrase \"none are free until all are free.\" She has toured with Godspeed You! Black Emperor and collaborated with Vic Chesnutt, Carla Bozulich, and Patti Smith, among others."
+    ],
+    discography: [
+      "Pools of Light (2017)",
+      "Entanglement (2018)",
+      "Phosphenes (2021)",
+      "Galaxy Heart (2022)",
+      "Unfolding (2025)"
+    ],
+    links: [
+      { label: "Constellation", url: "https://cstrecords.com/pages/artist/jessica-moss" },
+      { label: "Website", url: "https://www.jessicamoss.net/" }
+    ]
+  },
+  {
     slug: "hiss-tracts",
     members: ["david-bryant", "karl-lemieux"],
     title: "Hiss Tracts",

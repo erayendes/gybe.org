@@ -1,7 +1,10 @@
 // Refreshes src/data/projectShows.json from each project's live-date source.
 // Adds new dates, drops dates the source no longer lists, prunes past dates, and
 // keeps hand-edited venue/ticket details for dates that are still listed.
-// Prints REVIEW_NEEDED=1 and exits 2 when something needs a human look.
+// Projects whose source cannot be read are left exactly as they are.
+// The file is only rewritten when a date was added or removed, so an unchanged
+// week leaves the repo untouched. Prints one "added"/"removed" line per change,
+// then CHANGES=<n>; prints REVIEW_NEEDED=1 and exits 2 when something needs a human look.
 import { readFile, writeFile } from "node:fs/promises";
 
 const dataUrl = new URL("../src/data/projectShows.json", import.meta.url);
@@ -20,6 +23,8 @@ const states = new Set("AL AK AZ AR CA CO CT DC FL GA HI ID IL IN IA KS KY LA ME
 const regionNames = new Intl.DisplayNames(["en"], { type: "region" });
 
 const review = [];
+const changes = [];
+const checked = [];
 
 const decode = (text) =>
   text
@@ -76,10 +81,16 @@ function displayDate(iso) {
   return `${Number(day)} ${name[0].toUpperCase()}${name.slice(1)} ${year}`;
 }
 
+// NL, PE and SK are also country codes (Netherlands, Peru, Slovakia); treat them
+// as provinces only for the cities a tour is likely to reach there.
+const provinceCities = { NL: ["St. John's", "Corner Brook"], PE: ["Charlottetown"], SK: ["Saskatoon", "Regina", "Moose Jaw"] };
+
 function splitPlace(place) {
   const parts = place.split(",").map((part) => part.trim());
   const region = parts.length > 1 ? parts.at(-1) : "";
-  if (provinces.has(region)) return { city: place, country: "Canada" };
+  const city = parts.slice(0, -1).join(", ");
+  const isProvince = provinces.has(region) && (!provinceCities[region] || provinceCities[region].includes(city));
+  if (isProvince) return { city: place, country: "Canada" };
   if (states.has(region)) return { city: place, country: "USA" };
   if (/^[A-Z]{2}$/.test(region)) {
     const country = regionNames.of(region);
@@ -89,13 +100,23 @@ function splitPlace(place) {
   return { city: place, country: "" };
 }
 
-async function fetchPage(url) {
+// Cloudflare sometimes answers 200 with a "Verifying your connection" page; treat
+// a page without the expected markup as a failed attempt. Retries stay short so
+// one run fits a command timeout; the weekly routine re-runs the script on failure.
+async function fetchPage(url, marker) {
+  let problem = "";
   for (let attempt = 1; attempt <= 3; attempt++) {
-    const response = await fetch(url, { headers });
-    if (response.ok) return response.text();
-    if (attempt === 3) throw new Error(`${url} returned ${response.status}`);
-    await new Promise((resolve) => setTimeout(resolve, attempt * 30_000));
+    try {
+      const response = await fetch(url, { headers });
+      const html = await response.text();
+      if (response.ok && html.includes(marker)) return html;
+      problem = response.ok ? "answered without the expected content (bot check or layout change)" : `returned ${response.status}`;
+    } catch (error) {
+      problem = `failed (${error.message})`;
+    }
+    if (attempt < 3) await new Promise((resolve) => setTimeout(resolve, attempt * 15_000));
   }
+  throw new Error(`${url} ${problem} after 3 attempts`);
 }
 
 // Constellation Live groups dates under one heading per billed artist.
@@ -135,7 +156,10 @@ function parseThisquietarmy(html) {
   return [...sections.values()];
 }
 
-const parsers = { constellation: parseConstellation, thisquietarmy: parseThisquietarmy };
+const parsers = {
+  constellation: { parse: parseConstellation, marker: "cst-live-dates__artist-heading" },
+  thisquietarmy: { parse: parseThisquietarmy, marker: "style17" },
+};
 
 function matchSections(sections, projects) {
   const assigned = new Map();
@@ -199,25 +223,30 @@ for (const projects of bySource.values()) {
   const { parser, sourceUrl } = projects[0][1];
   let sections;
   try {
-    sections = parsers[parser](await fetchPage(sourceUrl));
+    sections = parsers[parser].parse(await fetchPage(sourceUrl, parsers[parser].marker));
   } catch (error) {
-    review.push(`Could not read ${sourceUrl}: ${error.message}. Dates for ${projects.map(([slug]) => slug).join(", ")} were only pruned.`);
+    review.push(`Could not read ${sourceUrl}: ${error.message}. Nothing was changed for ${projects.map(([slug]) => slug).join(", ")}.`);
   }
   if (sections && sections.length === 0) {
-    review.push(`No dates could be parsed from ${sourceUrl}; the page layout may have changed. Dates were only pruned.`);
+    review.push(`No dates could be parsed from ${sourceUrl}; the page layout may have changed. Nothing was changed for its projects.`);
     sections = undefined;
   }
+  if (!sections) continue;
 
-  const { assigned, unmatched } = sections ? matchSections(sections, projects) : { assigned: new Map(), unmatched: [] };
+  const { assigned, unmatched } = matchSections(sections, projects);
   for (const [slug, project] of projects) {
-    const before = JSON.stringify(project.dates);
-    if (sections) {
-      project.dates = buildDates(project, titles[slug] ?? slug, assigned.get(slug) ?? []);
-      project.lastChecked = today;
-    } else {
-      project.dates = project.dates.filter((show) => show.date >= today);
+    const before = project.dates;
+    project.dates = buildDates(project, titles[slug] ?? slug, assigned.get(slug) ?? []);
+    checked.push(project);
+    const describe = (show) => `${slug} ${show.date} ${show.city}, ${show.country} - ${show.venue}`;
+    for (const show of project.dates) {
+      if (!before.some((old) => old.date === show.date)) changes.push(`added ${describe(show)}`);
     }
-    if (JSON.stringify(project.dates) !== before) console.log(`updated ${slug}: ${project.dates.length} upcoming`);
+    for (const show of before) {
+      if (!project.dates.some((kept) => kept.date === show.date)) {
+        changes.push(`removed ${describe(show)} (${show.date < today ? "date passed" : "no longer listed"})`);
+      }
+    }
   }
 
   // Flag new billings that name a GY!BE member but match no tracked project.
@@ -231,7 +260,12 @@ for (const projects of bySource.values()) {
   }
 }
 
-await writeFile(dataUrl, `${JSON.stringify(data, null, 2)}\n`);
+if (changes.length > 0) {
+  for (const project of checked) project.lastChecked = today;
+  await writeFile(dataUrl, `${JSON.stringify(data, null, 2)}\n`);
+}
+for (const line of changes) console.log(line);
+console.log(`CHANGES=${changes.length}`);
 
 if (review.length > 0) {
   console.log("REVIEW_NEEDED=1");

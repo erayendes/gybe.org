@@ -34,9 +34,11 @@ The planned free automation is included in `.github/workflows/check-live-source.
 
 ## Project Show Updates
 
-Live dates for side projects live in `src/data/projectShows.json`. `.github/workflows/update-project-shows.yml` runs `npm run update:project-shows` every Monday. It reads Constellation Live (and thisquietarmy.com for Some Became Hollow Tubes), adds new dates, drops dates the source no longer lists, prunes past dates, and commits the change after a passing build, which triggers a redeploy. Hand-edited venue or ticket details are kept for dates that are still listed.
+Live dates for side projects live in `src/data/projectShows.json`; `npm run update:project-shows` refreshes them from Constellation Live (and thisquietarmy.com for Some Became Hollow Tubes). It adds new dates, drops dates the source no longer lists, prunes past dates, and keeps hand-edited venue or ticket details for dates that are still listed.
 
-It opens a "Review project live dates" issue when a source cannot be read or Constellation lists a billing that names a GY!BE member but matches no project. Fix that by adding the billing to a project's `match` list, or to `ignoreHeadings`.
+The file is only rewritten when a date was added or removed. The script prints one `added`/`removed` line per change and `CHANGES=<n>`. It exits 2 with `REVIEW_NEEDED=1` when a source cannot be read (that source's projects are left untouched; a Cloudflare check page counts as unreadable) or when Constellation lists a billing that names a GY!BE member but matches no project. Fix the latter by adding the billing to a project's `match` list, or to `ignoreHeadings`.
+
+A weekly Claude Code routine runs the script together with the GY!BE date check, builds and tests the site, pushes to `main` only when something changed, confirms the deploy, and submits IndexNow. `.github/workflows/update-project-shows.yml` remains as a manual fallback.
 
 ## IndexNow
 

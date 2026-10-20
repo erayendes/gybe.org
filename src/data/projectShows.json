@@ -103,6 +103,49 @@
         }
       ]
     },
+    "jessica-moss": {
+      "source": "Constellation Live",
+      "sourceUrl": "https://cstrecords.com/pages/live",
+      "parser": "constellation",
+      "match": [
+        "Jessica Moss"
+      ],
+      "lastChecked": "2026-10-20",
+      "dates": [
+        {
+          "date": "2026-11-04",
+          "displayDate": "4 Nov 2026",
+          "city": "Prague",
+          "country": "Czechia",
+          "venue": "A Studio Rubin",
+          "ticketUrl": "https://www.astudiorubin.cz/inscenace/koncert-radwana-ghaziho-moumneha-a-frederica-d-oberlanda"
+        },
+        {
+          "date": "2026-11-05",
+          "displayDate": "5 Nov 2026",
+          "city": "Berlin",
+          "country": "Germany",
+          "venue": "Kantine am Berghain",
+          "ticketUrl": "https://www.tixforgigs.com/Event/76501"
+        },
+        {
+          "date": "2026-11-06",
+          "displayDate": "6 Nov 2026",
+          "city": "Hamburg",
+          "country": "Germany",
+          "venue": "MS Stubnitz",
+          "ticketUrl": "https://www.stubnitz.com/events/2026/nov/06-radwanghazim.html"
+        },
+        {
+          "date": "2026-11-07",
+          "displayDate": "7 Nov 2026",
+          "city": "Utrecht",
+          "country": "Netherlands",
+          "venue": "Le Guess Who? (billed as Jessica Moss & Tony Buck)",
+          "ticketUrl": "https://leguesswho.com/lineup/jessica-moss-tony-buck?referrer=lineup"
+        }
+      ]
+    },
     "hiss-tracts": {
       "source": "Constellation Live",
       "sourceUrl": "https://cstrecords.com/pages/live",
