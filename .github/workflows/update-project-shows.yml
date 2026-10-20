@@ -1,0 +1,90 @@
+name: Update Project Live Dates
+
+on:
+  schedule:
+    - cron: "37 8 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: update-project-shows
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Refresh project live dates
+        id: refresh
+        continue-on-error: true
+        run: npm run --silent update:project-shows > project-shows.txt
+
+      - name: Print refresh result
+        run: cat project-shows.txt
+
+      - name: Check for data changes
+        id: diff
+        run: |
+          if git diff --quiet -- src/data/projectShows.json; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Build and test before publishing
+        if: steps.diff.outputs.changed == 'true'
+        run: |
+          npm run build
+          node --test tests/*.test.mjs
+
+      - name: Commit and push
+        if: steps.diff.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898333+github-actions[bot]@users.noreply.github.com"
+          git add src/data/projectShows.json
+          git commit -m "Update project live dates"
+          git push
+
+      - name: Open review issue
+        if: steps.refresh.outcome == 'failure'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const title = 'Review project live dates';
+            const body = [
+              'The weekly project live-date refresh needs a look.',
+              '',
+              'Edit `src/data/projectShows.json` if a billing should be tracked or ignored, then re-run the workflow.',
+              '',
+              '```',
+              fs.readFileSync('project-shows.txt', 'utf8').trim() || 'The script failed before printing anything; check the workflow log.',
+              '```'
+            ].join('\n');
+
+            const { owner, repo } = context.repo;
+            const existing = await github.rest.issues.listForRepo({
+              owner,
+              repo,
+              state: 'open'
+            });
+
+            if (!existing.data.some((issue) => issue.title === title)) {
+              await github.rest.issues.create({ owner, repo, title, body });
+            }

@@ -1,0 +1,281 @@
+{
+  "ignoreHeadings": [],
+  "projects": {
+    "thee-silver-mt-zion-memorial-orchestra": {
+      "source": "Constellation Live",
+      "sourceUrl": "https://cstrecords.com/pages/live",
+      "parser": "constellation",
+      "match": [
+        "Thee Silver Mt. Zion Memorial Orchestra",
+        "Silver Mt. Zion"
+      ],
+      "lastChecked": "2026-10-20",
+      "dates": []
+    },
+    "esmerine": {
+      "source": "Constellation Live",
+      "sourceUrl": "https://cstrecords.com/pages/live",
+      "parser": "constellation",
+      "match": [
+        "Esmerine"
+      ],
+      "lastChecked": "2026-10-20",
+      "dates": []
+    },
+    "black-ox-orkestar": {
+      "source": "Constellation Live",
+      "sourceUrl": "https://cstrecords.com/pages/live",
+      "parser": "constellation",
+      "match": [
+        "Black Ox Orkestar"
+      ],
+      "lastChecked": "2026-10-20",
+      "dates": []
+    },
+    "hrsta": {
+      "source": "Constellation Live",
+      "sourceUrl": "https://cstrecords.com/pages/live",
+      "parser": "constellation",
+      "match": [
+        "Hrsta"
+      ],
+      "lastChecked": "2026-10-20",
+      "dates": []
+    },
+    "fly-pan-am": {
+      "source": "Constellation Live",
+      "sourceUrl": "https://cstrecords.com/pages/live",
+      "parser": "constellation",
+      "match": [
+        "Fly Pan Am"
+      ],
+      "lastChecked": "2026-10-20",
+      "dates": []
+    },
+    "hangedup": {
+      "source": "Constellation Live",
+      "sourceUrl": "https://cstrecords.com/pages/live",
+      "parser": "constellation",
+      "match": [
+        "Hangedup"
+      ],
+      "lastChecked": "2026-10-20",
+      "dates": []
+    },
+    "1-speed-bike": {
+      "source": "Constellation Live",
+      "sourceUrl": "https://cstrecords.com/pages/live",
+      "parser": "constellation",
+      "match": [
+        "1-Speed Bike"
+      ],
+      "lastChecked": "2026-10-20",
+      "dates": []
+    },
+    "sackville": {
+      "source": "Constellation Live",
+      "sourceUrl": "https://cstrecords.com/pages/live",
+      "parser": "constellation",
+      "match": [
+        "Sackville"
+      ],
+      "lastChecked": "2026-10-20",
+      "dates": []
+    },
+    "saltland": {
+      "source": "Constellation Live",
+      "sourceUrl": "https://cstrecords.com/pages/live",
+      "parser": "constellation",
+      "match": [
+        "Rebecca Foon/Saltland",
+        "Rebecca Foon",
+        "Saltland"
+      ],
+      "lastChecked": "2026-10-20",
+      "dates": [
+        {
+          "date": "2026-10-29",
+          "displayDate": "29 Oct 2026",
+          "city": "Montreal",
+          "country": "Canada",
+          "venue": "PHI (billed as Rebecca Foon with Aliayta Foon-Dancoes, Gladstone Deluxe, and Mishka Stein)",
+          "ticketUrl": "https://phi.ca/en/events/rebecca-foon-concert/"
+        }
+      ]
+    },
+    "hiss-tracts": {
+      "source": "Constellation Live",
+      "sourceUrl": "https://cstrecords.com/pages/live",
+      "parser": "constellation",
+      "match": [
+        "Hiss Tracts"
+      ],
+      "lastChecked": "2026-10-20",
+      "dates": []
+    },
+    "exhaust": {
+      "source": "Constellation Live",
+      "sourceUrl": "https://cstrecords.com/pages/live",
+      "parser": "constellation",
+      "match": [
+        "Exhaust"
+      ],
+      "lastChecked": "2026-10-20",
+      "dates": []
+    },
+    "jerusalem-in-my-heart": {
+      "source": "Constellation Live",
+      "sourceUrl": "https://cstrecords.com/pages/live",
+      "parser": "constellation",
+      "match": [
+        "Jerusalem In My Heart"
+      ],
+      "lastChecked": "2026-10-20",
+      "dates": []
+    },
+    "clues": {
+      "source": "Constellation Live",
+      "sourceUrl": "https://cstrecords.com/pages/live",
+      "parser": "constellation",
+      "match": [
+        "Clues"
+      ],
+      "lastChecked": "2026-10-20",
+      "dates": []
+    },
+    "efrim-manuel-menuck": {
+      "source": "Constellation Live",
+      "sourceUrl": "https://cstrecords.com/pages/live",
+      "parser": "constellation",
+      "match": [
+        "Efrim Manuel Menuck",
+        "Efrim Menuck"
+      ],
+      "lastChecked": "2026-10-20",
+      "dates": [
+        {
+          "date": "2027-04-02",
+          "displayDate": "2 Apr 2027",
+          "city": "Knoxville, TN",
+          "country": "USA",
+          "venue": "Big Ears Festival (venue TBA)",
+          "ticketUrl": "https://bigearsfestival.org/event/efrim-manuel-menuck/"
+        }
+      ]
+    },
+    "bloom-and-ruin": {
+      "source": "Constellation Live",
+      "sourceUrl": "https://cstrecords.com/pages/live",
+      "parser": "constellation",
+      "match": [
+        "Efrim Manuel Menuck & Tashi Dorji",
+        "BLOOM AND RUIN"
+      ],
+      "lastChecked": "2026-10-20",
+      "dates": [
+        {
+          "date": "2027-04-01",
+          "displayDate": "1 Apr 2027",
+          "city": "Knoxville, TN",
+          "country": "USA",
+          "venue": "Big Ears Festival (venue TBA)",
+          "ticketUrl": "https://bigearsfestival.org/event/efrim-manuel-menuck-and-tashi-dorji-present-bloom-and-ruin/"
+        }
+      ]
+    },
+    "sing-sinck-sing": {
+      "source": "Constellation Live",
+      "sourceUrl": "https://cstrecords.com/pages/live",
+      "parser": "constellation",
+      "match": [
+        "SING SINCK, SING",
+        "Efrim Manuel Menuck & Kevin Doria"
+      ],
+      "lastChecked": "2026-10-20",
+      "dates": []
+    },
+    "all-hands-make-light": {
+      "source": "Constellation Live",
+      "sourceUrl": "https://cstrecords.com/pages/live",
+      "parser": "constellation",
+      "match": [
+        "ALL HANDS_MAKE LIGHT"
+      ],
+      "lastChecked": "2026-10-20",
+      "dates": []
+    },
+    "we-are-winters-blue-and-radiant-children": {
+      "source": "Constellation Live",
+      "sourceUrl": "https://cstrecords.com/pages/live",
+      "parser": "constellation",
+      "match": [
+        "WE ARE WINTER'S BLUE AND RADIANT CHILDREN"
+      ],
+      "lastChecked": "2026-10-20",
+      "dates": []
+    },
+    "land-of-kush": {
+      "source": "Constellation Live",
+      "sourceUrl": "https://cstrecords.com/pages/live",
+      "parser": "constellation",
+      "match": [
+        "Land Of Kush"
+      ],
+      "lastChecked": "2026-10-20",
+      "dates": []
+    },
+    "avec-le-soleil-sortant-de-sa-bouche": {
+      "source": "Constellation Live",
+      "sourceUrl": "https://cstrecords.com/pages/live",
+      "parser": "constellation",
+      "match": [
+        "Avec le soleil sortant de sa bouche"
+      ],
+      "lastChecked": "2026-10-20",
+      "dates": []
+    },
+    "some-became-hollow-tubes": {
+      "source": "thisquietarmy.com",
+      "sourceUrl": "https://thisquietarmy.com/",
+      "parser": "thisquietarmy",
+      "match": [
+        "Some Became Hollow Tubes"
+      ],
+      "lastChecked": "2026-10-20",
+      "dates": [
+        {
+          "date": "2026-12-10",
+          "displayDate": "10 Dec 2026",
+          "city": "Sherbrooke, QC",
+          "country": "Canada",
+          "venue": "La Petite Boite Noire (with Cloud Circuit)",
+          "ticketUrl": "https://lepointdevente.com/billets/pbn261210001"
+        },
+        {
+          "date": "2026-12-11",
+          "displayDate": "11 Dec 2026",
+          "city": "Chicoutimi, QC",
+          "country": "Canada",
+          "venue": "CEM",
+          "ticketUrl": "https://thisquietarmy.com/"
+        },
+        {
+          "date": "2026-12-12",
+          "displayDate": "12 Dec 2026",
+          "city": "Trois-Rivieres, QC",
+          "country": "Canada",
+          "venue": "Cafe-Bar Zenob",
+          "ticketUrl": "https://thisquietarmy.com/"
+        },
+        {
+          "date": "2026-12-13",
+          "displayDate": "13 Dec 2026",
+          "city": "Montreal, QC",
+          "country": "Canada",
+          "venue": "Casa del Popolo (with Numonia)",
+          "ticketUrl": "https://thisquietarmy.com/"
+        }
+      ]
+    }
+  }
+}

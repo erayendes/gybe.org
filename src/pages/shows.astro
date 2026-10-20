@@ -8,7 +8,7 @@ const structuredData = shows.dates.map((show) => ({
   "@type": "MusicEvent",
   name: `Godspeed You! Black Emperor - ${show.city}`,
   startDate: show.date,
-  endDate: show.date,
+  endDate: show.endDate ?? show.date,
   description: `Godspeed You! Black Emperor live at ${show.venue} in ${show.city}, ${show.country}.`,
   image: ["https://gybe.org/images/site/live-stage.jpg"],
   url: show.ticketUrl,

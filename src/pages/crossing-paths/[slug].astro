@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import { crossingPaths, upcomingShows } from "../../data/crossingPaths";
+import { crossingPaths, showsFor, upcomingShows } from "../../data/crossingPaths";
 import { members } from "../../data/members";
 
 export function getStaticPaths() {
@@ -14,7 +14,9 @@ const { item } = Astro.props;
 const description = item.summary;
 const pageUrl = `https://gybe.org/crossing-paths/${item.slug}/`;
 const linkedMembers = members.filter((member) => item.members.includes(member.slug));
+const tracked = showsFor(item);
 const upcoming = upcomingShows(item);
+const showDates = tracked && (upcoming.length > 0 || item.active?.endsWith("present"));
 const groupRef = { "@type": "MusicGroup", "@id": `${pageUrl}#group`, name: item.title };
 const structuredData = [
   {
@@ -120,7 +122,7 @@ const structuredData = [
       </>
     )}
 
-    {item.shows && (
+    {tracked && showDates && (
       <>
         <h2>upcoming shows</h2>
         {upcoming.length > 0 ? (
@@ -148,8 +150,8 @@ const structuredData = [
           <p>No upcoming dates were listed at the source when last checked.</p>
         )}
         <p class="side-note">
-          Source: <a href={item.shows.sourceUrl} target="_blank" rel="noopener noreferrer">{item.shows.source}</a><br />
-          Last checked: {item.shows.lastChecked}. Confirm dates with the official source before travelling.
+          Source: <a href={tracked.sourceUrl} target="_blank" rel="noopener noreferrer">{tracked.source}</a><br />
+          Checked weekly; last checked {tracked.lastChecked}. Confirm dates with the official source before travelling.
         </p>
       </>
     )}

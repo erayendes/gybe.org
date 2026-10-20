@@ -8,7 +8,8 @@
     "build": "ASTRO_TELEMETRY_DISABLED=1 astro check && ASTRO_TELEMETRY_DISABLED=1 astro build",
     "preview": "ASTRO_TELEMETRY_DISABLED=1 astro preview",
     "check": "ASTRO_TELEMETRY_DISABLED=1 astro check",
-    "submit:indexnow": "node scripts/submit-indexnow.mjs"
+    "submit:indexnow": "node scripts/submit-indexnow.mjs",
+    "update:project-shows": "node scripts/update-project-shows.mjs"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.9",

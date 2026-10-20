@@ -11,7 +11,7 @@ test("every music event includes Google's recommended event details", () => {
   assert.ok(events.length > 0, "expected at least one MusicEvent");
 
   for (const event of events) {
-    assert.equal(event.endDate, event.startDate, `${event.name}: endDate`);
+    assert.ok(event.endDate >= event.startDate, `${event.name}: endDate`);
     assert.match(event.description, /Godspeed You! Black Emperor/, `${event.name}: description`);
     assert.deepEqual(event.image, ["https://gybe.org/images/site/live-stage.jpg"], `${event.name}: image`);
     assert.equal(event.offers?.["@type"], "Offer", `${event.name}: offers type`);

@@ -1,3 +1,5 @@
+import projectShows from "./projectShows.json";
+
 export type ProjectShow = {
   date: string;
   displayDate: string;
@@ -6,6 +8,13 @@ export type ProjectShow = {
   venue: string;
   ticketUrl: string;
   soldOut?: boolean;
+};
+
+export type ProjectShowList = {
+  source: string;
+  sourceUrl: string;
+  lastChecked: string;
+  dates: ProjectShow[];
 };
 
 export type CrossingPath = {
@@ -21,24 +30,17 @@ export type CrossingPath = {
   body: string[];
   discography: string[];
   links: { label: string; url: string }[];
-  shows?: {
-    source: string;
-    sourceUrl: string;
-    lastChecked: string;
-    dates: ProjectShow[];
-  };
 };
+
+/** Live dates for tracked projects, kept in projectShows.json by scripts/update-project-shows.mjs. */
+export function showsFor(item: CrossingPath): ProjectShowList | undefined {
+  return (projectShows.projects as Record<string, ProjectShowList>)[item.slug];
+}
 
 /** Dates still ahead of the build date, so past shows drop off on the next deploy. */
 export function upcomingShows(item: CrossingPath, today = new Date().toISOString().slice(0, 10)) {
-  return (item.shows?.dates ?? []).filter((show) => show.date >= today);
+  return (showsFor(item)?.dates ?? []).filter((show) => show.date >= today);
 }
-
-const constellationLive = {
-  source: "Constellation Live",
-  sourceUrl: "https://cstrecords.com/pages/live",
-  lastChecked: "2026-10-20",
-};
 
 export const crossingPaths: CrossingPath[] = [
   {
@@ -123,8 +125,7 @@ export const crossingPaths: CrossingPath[] = [
       { label: "Constellation", url: "https://cstrecords.com/pages/artist/esmerine" },
       { label: "Website", url: "https://www.esmerine.com/" },
       { label: "Bandcamp", url: "https://esmerine.bandcamp.com/" }
-    ],
-    shows: { ...constellationLive, dates: [] }
+    ]
   },
   {
     slug: "black-ox-orkestar",
@@ -144,8 +145,7 @@ export const crossingPaths: CrossingPath[] = [
     links: [
       { label: "Constellation", url: "https://cstrecords.com/pages/artist/black-ox-orkestar" },
       { label: "Bandcamp", url: "https://blackoxorkestar.bandcamp.com/" }
-    ],
-    shows: { ...constellationLive, dates: [] }
+    ]
   },
   {
     slug: "hrsta",
@@ -183,8 +183,7 @@ export const crossingPaths: CrossingPath[] = [
     links: [
       { label: "Constellation", url: "https://cstrecords.com/pages/artist/fly-pan-am" },
       { label: "Bandcamp", url: "https://flypanam.bandcamp.com/" }
-    ],
-    shows: { ...constellationLive, dates: [] }
+    ]
   },
   {
     slug: "hangedup",
@@ -284,20 +283,7 @@ export const crossingPaths: CrossingPath[] = [
     links: [
       { label: "Constellation", url: "https://cstrecords.com/pages/artist/rebecca-foon-saltland" },
       { label: "Bandcamp", url: "https://saltland.bandcamp.com/" }
-    ],
-    shows: {
-      ...constellationLive,
-      dates: [
-        {
-          date: "2026-10-29",
-          displayDate: "29 Oct 2026",
-          city: "Montreal",
-          country: "Canada",
-          venue: "PHI (billed as Rebecca Foon with Aliayta Foon-Dancoes, Gladstone Deluxe, and Mishka Stein)",
-          ticketUrl: "https://phi.ca/en/events/rebecca-foon-concert/"
-        }
-      ]
-    }
+    ]
   },
   {
     slug: "hiss-tracts",
@@ -364,8 +350,7 @@ export const crossingPaths: CrossingPath[] = [
     links: [
       { label: "Constellation", url: "https://cstrecords.com/pages/artist/jerusalem-in-my-heart" },
       { label: "Bandcamp", url: "https://jerusaleminmyheart.bandcamp.com/" }
-    ],
-    shows: { ...constellationLive, dates: [] }
+    ]
   },
   {
     slug: "clues",
@@ -407,20 +392,7 @@ export const crossingPaths: CrossingPath[] = [
     links: [
       { label: "Constellation", url: "https://cstrecords.com/pages/artist/efrim-manuel-menuck" },
       { label: "Bandcamp", url: "https://efrimmanuelmenuck.bandcamp.com/" }
-    ],
-    shows: {
-      ...constellationLive,
-      dates: [
-        {
-          date: "2027-04-02",
-          displayDate: "2 Apr 2027",
-          city: "Knoxville, TN",
-          country: "USA",
-          venue: "Big Ears Festival (venue TBA)",
-          ticketUrl: "https://bigearsfestival.org/event/efrim-manuel-menuck/"
-        }
-      ]
-    }
+    ]
   },
   {
     slug: "bloom-and-ruin",
@@ -438,20 +410,7 @@ export const crossingPaths: CrossingPath[] = [
     discography: ["Two Liberations (2026)"],
     links: [
       { label: "Bandcamp", url: "https://efrimmanuelmenuck.bandcamp.com/album/bloom-and-ruin-two-liberations" }
-    ],
-    shows: {
-      ...constellationLive,
-      dates: [
-        {
-          date: "2027-04-01",
-          displayDate: "1 Apr 2027",
-          city: "Knoxville, TN",
-          country: "USA",
-          venue: "Big Ears Festival (venue TBA)",
-          ticketUrl: "https://bigearsfestival.org/event/efrim-manuel-menuck-and-tashi-dorji-present-bloom-and-ruin/"
-        }
-      ]
-    }
+    ]
   },
   {
     slug: "sing-sinck-sing",
@@ -723,46 +682,7 @@ export const crossingPaths: CrossingPath[] = [
     ],
     links: [
       { label: "Bandcamp", url: "https://somebecamehollowtubes.bandcamp.com/" }
-    ],
-    shows: {
-      source: "thisquietarmy.com",
-      sourceUrl: "https://thisquietarmy.com/",
-      lastChecked: "2026-10-20",
-      dates: [
-        {
-          date: "2026-12-10",
-          displayDate: "10 Dec 2026",
-          city: "Sherbrooke, QC",
-          country: "Canada",
-          venue: "La Petite Boite Noire (with Cloud Circuit)",
-          ticketUrl: "https://lepointdevente.com/billets/pbn261210001"
-        },
-        {
-          date: "2026-12-11",
-          displayDate: "11 Dec 2026",
-          city: "Chicoutimi, QC",
-          country: "Canada",
-          venue: "CEM",
-          ticketUrl: "https://thisquietarmy.com/"
-        },
-        {
-          date: "2026-12-12",
-          displayDate: "12 Dec 2026",
-          city: "Trois-Rivieres, QC",
-          country: "Canada",
-          venue: "Cafe-Bar Zenob",
-          ticketUrl: "https://thisquietarmy.com/"
-        },
-        {
-          date: "2026-12-13",
-          displayDate: "13 Dec 2026",
-          city: "Montreal, QC",
-          country: "Canada",
-          venue: "Casa del Popolo (with Numonia)",
-          ticketUrl: "https://thisquietarmy.com/"
-        }
-      ]
-    }
+    ]
   },
   {
     slug: "pangea-de-futura",
@@ -890,13 +810,7 @@ export const crossingPaths: CrossingPath[] = [
     links: [
       { label: "Website", url: "https://rogertelliercraig.com/" },
       { label: "Bandcamp", url: "https://rogertelliercraig.bandcamp.com/" }
-    ],
-    shows: {
-      source: "rogertelliercraig.com",
-      sourceUrl: "https://rogertelliercraig.com/",
-      lastChecked: "2026-10-20",
-      dates: []
-    }
+    ]
   },
   {
     slug: "le-revelateur",

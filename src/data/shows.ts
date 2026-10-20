@@ -84,6 +84,17 @@ export const shows = {
       organizer: "Danforth Music Hall",
       organizerUrl: "https://www.ticketmaster.ca/event/10006521D6E96D34",
       ticketUrl: "https://www.ticketmaster.ca/event/10006521D6E96D34"
+    },
+    {
+      date: "2027-07-22",
+      endDate: "2027-07-25",
+      displayDate: "22-25 Jul 2027",
+      city: "Blackfeet Nation, Montana",
+      country: "USA",
+      venue: "Fire In The Mountains Festival",
+      organizer: "Fire In The Mountains",
+      organizerUrl: "https://www.fitmfest.com/",
+      ticketUrl: "https://www.fitmfest.com/"
     }
   ]
 };

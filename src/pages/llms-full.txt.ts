@@ -41,7 +41,7 @@ export function GET() {
   ]);
 
   const showLines = shows.dates.length > 0
-    ? shows.dates.map((show) => `- ${show.date}: ${show.city}, ${show.country} at ${show.venue}${show.soldOut ? " (sold out)" : ""}. Tickets/source: ${show.ticketUrl}`)
+    ? shows.dates.map((show) => `- ${show.endDate ? `${show.date} to ${show.endDate}` : show.date}: ${show.city}, ${show.country} at ${show.venue}${show.soldOut ? " (sold out)" : ""}. Tickets/source: ${show.ticketUrl}`)
     : ["- No upcoming dates listed."];
 
   const pathLines = crossingPaths.flatMap((item) => [
