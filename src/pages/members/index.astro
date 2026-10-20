@@ -1,10 +1,12 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { members } from "../../data/members";
+import { crossingPaths } from "../../data/crossingPaths";
 
 const current = members.filter((member) => member.status === "current");
 const former = members.filter((member) => member.status === "former");
 const currentNames = current.map((member) => member.name).join(", ");
+const projectsOf = (slug: string) => crossingPaths.filter((item) => item.members.includes(slug));
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "ItemList",
@@ -20,32 +22,50 @@ const structuredData = {
 
 <BaseLayout
   title="Godspeed You! Black Emperor Members: Current and Former Lineup"
-  description={`Who is in Godspeed You! Black Emperor? Current members: ${currentNames}. Plus former members, projectionists, roles, and years active.`}
+  description={`Who is in Godspeed You! Black Emperor? Current members: ${currentNames}. Plus former members, projectionists, roles, years active, and the other bands each member plays in.`}
   structuredData={structuredData}
 >
   <h1 class="page-title">members</h1>
   <p class="deck">
-    Godspeed You! Black Emperor currently has {current.length} members: {currentNames}. Below are the current lineup and {former.length} former members, including the projectionists who shaped the live image work, with roles, years active, and related projects.
+    Godspeed You! Black Emperor currently has {current.length} members: {currentNames}. Below are the current lineup and {former.length} former members, including the projectionists who shaped the live image work, with roles, years active, and the other bands and solo projects each member is part of. See <a href="/crossing-paths/">crossing-paths</a> for every side project.
   </p>
 
   <h2 class="section-title">current</h2>
-  <section class="archive-list">
+  <section class="archive-list member-list">
     {current.map((member) => (
       <div class="archive-row">
         <span class="meta">{member.years}</span>
         <a class="archive-row__title" href={`/members/${member.slug}/`}>{member.name}</a>
-        <span class="archive-row__note">{member.role}</span>
+        <span class="archive-row__note">
+          {member.role}
+          {projectsOf(member.slug).length > 0 && (
+            <>
+              <br />also: {projectsOf(member.slug).map((item, index) => (
+                <>{index > 0 && ", "}<a href={`/crossing-paths/${item.slug}/`}>{item.title}</a></>
+              ))}
+            </>
+          )}
+        </span>
       </div>
     ))}
   </section>
 
   <h2 class="section-title">former</h2>
-  <section class="archive-list">
+  <section class="archive-list member-list">
     {former.map((member) => (
       <div class="archive-row">
         <span class="meta">{member.years}</span>
         <a class="archive-row__title" href={`/members/${member.slug}/`}>{member.name}</a>
-        <span class="archive-row__note">{member.role}</span>
+        <span class="archive-row__note">
+          {member.role}
+          {projectsOf(member.slug).length > 0 && (
+            <>
+              <br />also: {projectsOf(member.slug).map((item, index) => (
+                <>{index > 0 && ", "}<a href={`/crossing-paths/${item.slug}/`}>{item.title}</a></>
+              ))}
+            </>
+          )}
+        </span>
       </div>
     ))}
   </section>

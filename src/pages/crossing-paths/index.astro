@@ -1,7 +1,13 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { crossingPaths } from "../../data/crossingPaths";
+import { members } from "../../data/members";
 
+const memberProjects = crossingPaths.filter((item) => item.members.length > 0);
+const sceneLinks = crossingPaths.filter((item) => item.members.length === 0);
+const byMember = members
+  .map((member) => ({ member, projects: memberProjects.filter((item) => item.members.includes(member.slug)) }))
+  .filter((row) => row.projects.length > 0);
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "ItemList",
@@ -17,16 +23,50 @@ const structuredData = {
 
 <BaseLayout
   title="GY!BE Side Projects and Related Artists / gybe.org"
-  description="Side projects, related artists, and scene links around Godspeed You! Black Emperor, Constellation Records, and the Montreal independent music network."
+  description={`Other bands and solo projects of Godspeed You! Black Emperor members: ${memberProjects.length} side projects by ${byMember.length} current and former members, plus related Montreal and Constellation artists.`}
   structuredData={structuredData}
 >
   <h1 class="page-title">crossing-paths</h1>
   <p class="deck">
-    Side projects, related artists, and scene links around the Godspeed / Constellation / Montreal orbit.
+    Godspeed You! Black Emperor members have played in {memberProjects.length} other bands, duos, and solo projects, from Thee Silver Mt. Zion and Set Fire to Flames to Efrim Menuck's solo records. {byMember.length} current and former members are linked below, followed by {sceneLinks.length} related artists from the Godspeed / Constellation / Montreal orbit.
   </p>
 
+  <h2 class="section-title">by member</h2>
+  <table class="status-table">
+    <thead>
+      <tr>
+        <th>Member</th>
+        <th>Other projects</th>
+      </tr>
+    </thead>
+    <tbody>
+      {byMember.map(({ member, projects }) => (
+        <tr>
+          <td><a href={`/members/${member.slug}/`}>{member.name}</a></td>
+          <td>
+            {projects.map((item, index) => (
+              <>{index > 0 && ", "}<a href={`/crossing-paths/${item.slug}/`}>{item.title}</a></>
+            ))}
+          </td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+
+  <h2 class="section-title">member side projects</h2>
   <section class="crossing-list">
-    {crossingPaths.map((item) => (
+    {memberProjects.map((item) => (
+      <article class="crossing-item">
+        <a class="crossing-item__title" href={`/crossing-paths/${item.slug}/`}>{item.title}</a>
+        <p class="crossing-item__relation">{item.relation}</p>
+        <p class="crossing-item__summary">{item.summary}</p>
+      </article>
+    ))}
+  </section>
+
+  <h2 class="section-title">scene links</h2>
+  <section class="crossing-list">
+    {sceneLinks.map((item) => (
       <article class="crossing-item">
         <a class="crossing-item__title" href={`/crossing-paths/${item.slug}/`}>{item.title}</a>
         <p class="crossing-item__relation">{item.relation}</p>

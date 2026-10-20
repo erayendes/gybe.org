@@ -256,7 +256,8 @@ figure {
   color: var(--muted);
 }
 
-.source-list .archive-row {
+.source-list .archive-row,
+.member-list .archive-row {
   grid-template-columns: 8rem minmax(180px, 260px) minmax(0, 1fr);
 }
 
@@ -435,7 +436,8 @@ figure {
     justify-content: flex-start;
   }
 
-  .archive-row {
+  .archive-row,
+  .member-list .archive-row {
     grid-template-columns: 1fr;
     gap: 3px;
   }

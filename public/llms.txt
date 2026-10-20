@@ -12,7 +12,7 @@ The site is not affiliated with Godspeed You! Black Emperor, Constellation, Kran
 - [Discography](https://gybe.org/disco): record-by-record archive of albums, EPs, archival releases, track lists, notes, cover art, and official links.
 - [Shows](https://gybe.org/shows): current live-date list copied from Constellation Live and manually reviewed before publishing.
 - [Members](https://gybe.org/members): current and former members, including instrumental roles, years, status, and related projects.
-- [Crossing paths](https://gybe.org/crossing-paths): side projects and related artists connected to Godspeed You! Black Emperor, Constellation, and the Montreal independent music network.
+- [Crossing paths](https://gybe.org/crossing-paths): other bands and solo projects of GY!BE members (with a member-by-member table and upcoming dates for active projects), plus related artists from Constellation and the Montreal independent music network.
 - [Contact](https://gybe.org/contact): corrections and removal requests.
 
 ## Citation guidance

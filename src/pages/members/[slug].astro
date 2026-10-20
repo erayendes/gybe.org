@@ -25,7 +25,15 @@ const structuredData = [
     name: member.name,
     url: `https://gybe.org/members/${member.slug}/`,
     description: member.summary,
-    memberOf: bandRef,
+    memberOf: [
+      bandRef,
+      ...related.map((item) => ({
+        "@type": "MusicGroup",
+        "@id": `https://gybe.org/crossing-paths/${item.slug}/#group`,
+        name: item.title,
+        url: `https://gybe.org/crossing-paths/${item.slug}/`,
+      })),
+    ],
     hasOccupation: member.role,
   },
   {

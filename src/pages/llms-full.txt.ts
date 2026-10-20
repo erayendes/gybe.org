@@ -49,6 +49,9 @@ export function GET() {
     "",
     `- URL: ${site}/crossing-paths/${item.slug}/`,
     `- Connection: ${item.relation}`,
+    ...(item.members.length > 0
+      ? [`- GY!BE members: ${members.filter((member) => item.members.includes(member.slug)).map((member) => member.name).join(", ")}`]
+      : []),
     `- Summary: ${item.summary}`,
     ...(item.discography?.length ? [`- Records: ${item.discography.join("; ")}`] : []),
     ...upcomingShows(item).map((show) => `- Upcoming show: ${show.date}: ${show.city}, ${show.country} at ${show.venue}${show.soldOut ? " (sold out)" : ""}. Tickets/source: ${show.ticketUrl}`),
