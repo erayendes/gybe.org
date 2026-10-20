@@ -1,5 +1,5 @@
 import { albums } from "../data/albums";
-import { crossingPaths } from "../data/crossingPaths";
+import { crossingPaths, upcomingShows } from "../data/crossingPaths";
 import { members } from "../data/members";
 import { shows } from "../data/shows";
 
@@ -51,7 +51,7 @@ export function GET() {
     `- Connection: ${item.relation}`,
     `- Summary: ${item.summary}`,
     ...(item.discography?.length ? [`- Records: ${item.discography.join("; ")}`] : []),
-    ...(item.shows?.dates ?? []).map((show) => `- Upcoming show: ${show.date}: ${show.city}, ${show.country} at ${show.venue}${show.soldOut ? " (sold out)" : ""}. Tickets/source: ${show.ticketUrl}`),
+    ...upcomingShows(item).map((show) => `- Upcoming show: ${show.date}: ${show.city}, ${show.country} at ${show.venue}${show.soldOut ? " (sold out)" : ""}. Tickets/source: ${show.ticketUrl}`),
     "",
   ]);
 

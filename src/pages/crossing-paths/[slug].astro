@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import { crossingPaths } from "../../data/crossingPaths";
+import { crossingPaths, upcomingShows } from "../../data/crossingPaths";
 import { members } from "../../data/members";
 
 export function getStaticPaths() {
@@ -14,7 +14,7 @@ const { item } = Astro.props;
 const description = item.summary;
 const pageUrl = `https://gybe.org/crossing-paths/${item.slug}/`;
 const linkedMembers = members.filter((member) => item.members.includes(member.slug));
-const upcoming = item.shows?.dates ?? [];
+const upcoming = upcomingShows(item);
 const groupRef = { "@type": "MusicGroup", "@id": `${pageUrl}#group`, name: item.title };
 const structuredData = [
   {

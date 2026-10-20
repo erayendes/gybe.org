@@ -9,7 +9,8 @@ export const members = [
     bio: [
       "Efrim Menuck is one of the founding figures of Godspeed You! Black Emperor and a central presence in the band's musical language: long guitar lines, tape material, keyboard color, and a preference for collective scale over front-person structure.",
       "His work around GY!BE, Thee Silver Mt. Zion, Set Fire to Flames, and Hotel2Tango links the band to Montreal's independent recording and performance culture. The politics associated with his projects are usually carried through sound, presentation, liner notes, and refusal of standard industry promotion rather than through conventional rock-star positioning.",
-      "In the archive, Menuck sits at the center of several crossing paths: GY!BE's instrumental force, Silver Mt. Zion's vocal and elegiac work, and the broader Hotel2Tango recording community."
+      "In the archive, Menuck sits at the center of several crossing paths: GY!BE's instrumental force, Silver Mt. Zion's vocal and elegiac work, and the broader Hotel2Tango recording community.",
+      "Since 2011 he has also released solo records as Efrim Manuel Menuck and formed a run of duos and small groups: SING SINCK, SING with Kevin Doria, ALL HANDS_MAKE LIGHT with Ariel Engle, BLOOM AND RUIN with Tashi Dorji, and WE ARE WINTER'S BLUE AND RADIANT CHILDREN."
     ]
   },
   {
@@ -22,7 +23,8 @@ export const members = [
     bio: [
       "Mauro Pezzente is one of GY!BE's founding members, alongside Efrim Menuck and Mike Moya. His bass work anchors the band's early trio history and remains part of the reunited lineup.",
       "His role is less public-facing than some other members, but it is central to the group's continuity. The bass often provides the slow physical ground under drones, field recordings, string lines, and long crescendos.",
-      "Pezzente is also part of the Montreal independent arts world around the band's first era, when GY!BE grew out of a local collective environment rather than a conventional commercial-band structure."
+      "Pezzente is also part of the Montreal independent arts world around the band's first era, when GY!BE grew out of a local collective environment rather than a conventional commercial-band structure.",
+      "Outside the band, Pezzente played bass in the Montreal group Maica Mia from around 2013. With Kiva Stimac he opened Casa del Popolo in 2000 and co-founded La Sala Rossa and the Suoni per il Popolo festival, venues that have hosted much of the scene documented in this archive."
     ]
   },
   {
@@ -35,7 +37,8 @@ export const members = [
     bio: [
       "Mike Moya helped form Godspeed You! Black Emperor in 1994 and played guitar during the band's early development. He returned when the group became active again in 2010.",
       "Moya's playing belongs to the patient, textural side of the band: sustained guitar tones, slow melodic arcs, and ensemble movement that builds without relying on conventional verse or solo structures.",
-      "Outside GY!BE, Moya leads Hrsta and appears in the orbit of Set Fire to Flames, carrying parts of the Montreal experimental language into smaller and more intimate forms."
+      "Outside GY!BE, Moya leads Hrsta and appears in the orbit of Set Fire to Flames, carrying parts of the Montreal experimental language into smaller and more intimate forms.",
+      "He was also a core member of Molasses, Scott Chernoff's avant-folk ensemble, alongside Thierry Amar and Norsola Johnson."
     ]
   },
   {
@@ -48,7 +51,8 @@ export const members = [
     bio: [
       "Thierry Amar joined GY!BE during the expansion from a small group into a larger ensemble. His bass work, both electric and upright, helped give the band its heavy orchestral weight.",
       "Amar's playing bridges rock rhythm, chamber music, and drone. In the band's long builds, his low-end lines can act as pulse, pressure, and architecture for the guitars, strings, percussion, and tape elements around him.",
-      "He is also a major figure in Thee Silver Mt. Zion and Black Ox Orkestar, linking GY!BE to other projects that draw on chamber-rock, folk, political song, and Yiddish musical traditions."
+      "He is also a major figure in Thee Silver Mt. Zion and Black Ox Orkestar, linking GY!BE to other projects that draw on chamber-rock, folk, political song, and Yiddish musical traditions.",
+      "Amar has also played bass in Molasses, Sam Shalabi's Land of Kush, and the Craig Pedersen Quartet, and co-owns the Hotel2Tango studio with Efrim Menuck, Howard Bilerman, and Radwan Ghazi Moumneh."
     ]
   },
   {
@@ -61,7 +65,8 @@ export const members = [
     bio: [
       "David Bryant joined GY!BE in the late 1990s, contributing guitar, tape-loop work, and later electronic texture during the period that produced the band's best-known early records.",
       "His work is closely tied to the band's sense of space: long guitar tones, degraded textures, and loops or environmental sound used as musical material.",
-      "Bryant's related projects include Set Fire to Flames and Hiss Tracts, both of which push further into field recordings, room tone, drone, and landscape-like sound construction."
+      "Bryant's related projects include Set Fire to Flames and Hiss Tracts, both of which push further into field recordings, room tone, drone, and landscape-like sound construction.",
+      "He conceived and named Set Fire to Flames. Before GY!BE he sang in the Montreal band Bliss, and he later co-directed the film Quiet Zone (2015) with Karl Lemieux."
     ]
   },
   {
@@ -74,7 +79,8 @@ export const members = [
     bio: [
       "Aidan Girt is one of GY!BE's long-running percussionists, joining during the band's first major expansion. His drumming is part of the band's ability to move from near-stillness into overwhelming ensemble force.",
       "GY!BE's rhythm section rarely behaves like conventional rock backing. Girt's role often involves patience, repetition, and pressure: percussion that lets drones gather before pushing the whole group into a physical peak.",
-      "His other projects include Exhaust and 1-Speed Bike, where rhythm, electronics, sampling, and political abrasion appear in more stripped and confrontational forms."
+      "His other projects include Exhaust and 1-Speed Bike, where rhythm, electronics, sampling, and political abrasion appear in more stripped and confrontational forms.",
+      "He also drummed on Set Fire to Flames' first album, and his current work includes the improvised drone duo Some Became Hollow Tubes with Eric Quach and the collective Pangea De Futura."
     ]
   },
   {
@@ -87,7 +93,8 @@ export const members = [
     bio: [
       "Sophie Trudeau joined GY!BE in the late 1990s and became one of the most recognizable instrumental voices in the ensemble. Her violin lines often carry the melodic and emotional center of the band's long-form pieces.",
       "In GY!BE, the violin can sound elegiac, severe, devotional, or alarm-like. Trudeau's parts often sit between folk melody and chamber music, rising through the guitars and percussion during the band's crescendos.",
-      "She is also a core member of Thee Silver Mt. Zion and appears in Set Fire to Flames, making her one of the clearest links between GY!BE's instrumental scale and the more vocal, lyric-driven side of the Montreal collective."
+      "She is also a core member of Thee Silver Mt. Zion and appears in Set Fire to Flames, making her one of the clearest links between GY!BE's instrumental scale and the more vocal, lyric-driven side of the Montreal collective.",
+      "Her other work includes the audiovisual duo Trudeau-Grill with filmmaker Michaela Grill, The Mile End Ladies String Auxiliary, Diebold with Ian Ilavsky, Et Sans, Valley of the Giants, and an early stint in Hrsta."
     ]
   },
   {
@@ -100,7 +107,8 @@ export const members = [
     bio: [
       "Karl Lemieux is a filmmaker, projection artist, and musician whose live 16mm work became part of GY!BE's post-reunion stage language.",
       "The live image work often uses physical film processes, abstraction, decay, and light as material. It matches the band's preference for analog texture, political unease, and slow accumulation.",
-      "Lemieux is also closely associated with Jerusalem In My Heart, where projection and music are treated as a combined performance system."
+      "Lemieux is also closely associated with Jerusalem In My Heart, where projection and music are treated as a combined performance system.",
+      "His other audiovisual work includes the trio Esprits Frappeurs, the performance Unearthed with BJ Nilsen, Kuroshio with Philip Jeck and Michaela Grill, and 16mm projector sounds and imagery on Hiss Tracts' Shortwave Nights."
     ]
   },
   {
@@ -113,6 +121,7 @@ export const members = [
     bio: [
       "Timothy Herzog joined GY!BE's post-reunion lineup as a drummer and percussionist, adding to the band's already dense rhythm section.",
       "His role supports the live power of the later records, where the band balances heavy riff-based passages with long arcs of drone and orchestral build.",
+      "Before GY!BE, Herzog drummed in North Carolina's underground with Milemarker, Des Ark, and Black Skies, and he later played on Wrekmeister Harmonies' Light Falls.",
       "The two-drummer setup gives the reunited group a broader physical range, from slow synchronized pressure to sudden acceleration."
     ]
   },
@@ -138,7 +147,8 @@ export const members = [
     summary: "Early horn contributor during the formative ensemble years.",
     bio: [
       "Thea Pratt contributed French horn during GY!BE's early expansion, before the band settled into the better-known late-1990s lineup.",
-      "The horn role points to the group's early interest in orchestral color. Even before the classic records, GY!BE was moving beyond guitar-band instrumentation toward a larger ensemble sound."
+      "The horn role points to the group's early interest in orchestral color. Even before the classic records, GY!BE was moving beyond guitar-band instrumentation toward a larger ensemble sound.",
+      "Pratt also plays French horn on both Set Fire to Flames albums and has played with Nicolas Caloia's Ratchet Orchestra."
     ]
   },
   {
@@ -150,7 +160,8 @@ export const members = [
     summary: "Early drummer from the first exploratory period of the group.",
     bio: [
       "Dano LeBlanc is listed among GY!BE's early former members, connected to the brief and shifting lineup period before the classic ensemble stabilized.",
-      "The early lineup was porous and local, with musicians moving in and out as the project grew from a small Montreal group into a large collective."
+      "The early lineup was porous and local, with musicians moving in and out as the project grew from a small Montreal group into a large collective.",
+      "Discogs credits him with acoustic guitar on the 1994 demo. LeBlanc was also known as the cartoonist behind Acadieman and released music with Sunset Industry. He died in July 2023."
     ]
   },
   {
@@ -175,7 +186,8 @@ export const members = [
     bio: [
       "Bruce Cawdron was a percussionist in GY!BE during the classic era and returned for the early post-hiatus period. His playing helped define the band's layered, marching, and ritual-like rhythmic force.",
       "He is also a founding figure in Esmerine, where percussion, marimba, cello, and chamber instrumentation move into a more intimate but still expansive world.",
-      "Cawdron's work connects the heavy ensemble sound of GY!BE with the chamber-experimental language of several Constellation projects."
+      "Cawdron's work connects the heavy ensemble sound of GY!BE with the chamber-experimental language of several Constellation projects.",
+      "He also played on both Set Fire to Flames albums and in the acoustic duo Triple Burner with Harris Newman."
     ]
   },
   {
@@ -188,7 +200,8 @@ export const members = [
     bio: [
       "Norsola Johnson played cello in GY!BE during the group's major early period. Her instrument added depth to the string section and helped separate the band from guitar-only post-rock formations.",
       "The cello parts gave the early records a darker chamber register, reinforcing the band's interest in elegy, tension, and large-scale instrumental movement.",
-      "Johnson's entry documents the cello voice in the classic-era lineup and the broader chamber weight of the early ensemble."
+      "Johnson's entry documents the cello voice in the classic-era lineup and the broader chamber weight of the early ensemble.",
+      "Outside GY!BE she played cello in Molasses, Land of Kush, and the Ratchet Orchestra, and appears on Hrsta's first album."
     ]
   },
   {
@@ -200,7 +213,8 @@ export const members = [
     summary: "Short-term accordion contributor from the early collective period.",
     bio: [
       "Grayson Walker is listed as an early accordion contributor during the band's formative collective period.",
-      "The short tenure still matters historically: GY!BE's early lineup was porous and exploratory, with instruments entering the group as the sound expanded beyond its founding trio."
+      "The short tenure still matters historically: GY!BE's early lineup was porous and exploratory, with instruments entering the group as the sound expanded beyond its founding trio.",
+      "Walker later became a member of Frog Eyes, plays in the duo Hearse, and has added accordion and keyboards to records by Destroyer and Himalayan Bear."
     ]
   },
   {
@@ -225,7 +239,8 @@ export const members = [
     bio: [
       "Roger Tellier-Craig played guitar in GY!BE from the late 1990s through the pre-hiatus period. His tenure overlaps with the records that established the band's international reputation.",
       "His other major project, Fly Pan Am, shows a different side of the same Montreal scene: sharper rhythms, electronics, noise, and fragmented experimental rock structures.",
-      "Tellier-Craig's work makes him an important bridge between GY!BE's long-form orchestral build and Constellation's more fractured experimental rock lineage."
+      "Tellier-Craig's work makes him an important bridge between GY!BE's long-form orchestral build and Constellation's more fractured experimental rock lineage.",
+      "He also played guitar in Set Fire to Flames, co-led Et Sans and Pas Chic Chic, worked as Le Revelateur with video artist Sabrina Ratte, and now releases solo electronic records under his own name."
     ]
   },
   {
@@ -273,7 +288,8 @@ export const members = [
     summary: "Projection contributor during the pre-hiatus live period.",
     bio: [
       "Jean-Sebastian Truchy is listed as a projection contributor during the pre-hiatus years.",
-      "The entry helps keep the visual side of GY!BE documented alongside the instrumental lineup, which is important for a band whose concerts rely heavily on film and image."
+      "The entry helps keep the visual side of GY!BE documented alongside the instrumental lineup, which is important for a band whose concerts rely heavily on film and image.",
+      "Truchy is also a musician: he played bass in Fly Pan Am and on both Set Fire to Flames albums, appears in Molasses, and is part of the Constellation group Avec le soleil sortant de sa bouche."
     ]
   },
   {
@@ -285,7 +301,8 @@ export const members = [
     summary: "Projection contributor during the pre-hiatus years.",
     bio: [
       "Fluffy Erskine contributed film projections during the pre-hiatus years, when GY!BE's live presentation had become a full audiovisual environment.",
-      "Like the other projection artists in the archive, Erskine's role sits beside the music rather than behind it. The band's live identity depends on projected images, analog texture, and collective stage presence as much as on individual performance."
+      "Like the other projection artists in the archive, Erskine's role sits beside the music rather than behind it. The band's live identity depends on projected images, analog texture, and collective stage presence as much as on individual performance.",
+      "Erskine also played saw, percussion, music box, and tapes on Set Fire to Flames' second album, and appears in Molasses and on Hrsta's first album."
     ]
   }
 ];
