@@ -1,8 +1,8 @@
 name: Update Project Live Dates
 
+# Scheduled run disabled: the weekly gybe.org routine now updates GYBE and project dates together.
+# Kept as a manual fallback (Actions > Run workflow).
 on:
-  schedule:
-    - cron: "37 8 * * 1"
   workflow_dispatch:
 
 permissions:
