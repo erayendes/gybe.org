@@ -13,11 +13,9 @@ export function getStaticPaths() {
 
 const { member } = Astro.props;
 const description = member.summary;
-const related = crossingPaths.filter((item) =>
-  member.projects.some((project) => item.title.toLowerCase().includes(project.toLowerCase().replace(/^thee /, "")) || project.toLowerCase().includes(item.title.toLowerCase()))
-);
-const projectContext = member.projects.length > 0
-  ? `Related projects listed here: ${member.projects.join(", ")}. These links place the member inside the wider Montreal and Constellation-adjacent network rather than treating the GY!BE lineup as an isolated roster.`
+const related = crossingPaths.filter((item) => item.members.includes(member.slug));
+const projectContext = related.length > 0
+  ? `Related projects listed here: ${related.map((item) => item.title).join(", ")}. These links place the member inside the wider Montreal and Constellation-adjacent network rather than treating the GY!BE lineup as an isolated roster.`
   : "No related project is currently listed for this archive entry. The page still keeps role and years active visible so the member's place in the band history is clear.";
 const archiveContext = `${member.name} is a ${member.status} member of Godspeed You! Black Emperor, credited with ${member.role} (${member.years}). ${projectContext}`;
 const structuredData = [
@@ -74,14 +72,11 @@ const structuredData = [
       </tbody>
     </table>
 
-    {member.projects.length > 0 && (
+    {related.length > 0 && (
       <>
         <h2>crossing paths</h2>
         <ul>
-          {member.projects.map((project) => {
-            const match = related.find((item) => item.title.toLowerCase().includes(project.toLowerCase().replace(/^thee /, "")) || project.toLowerCase().includes(item.title.toLowerCase()));
-            return <li>{match ? <a href={`/crossing-paths/${match.slug}/`}>{project}</a> : project}</li>;
-          })}
+          {related.map((item) => <li><a href={`/crossing-paths/${item.slug}/`}>{item.title}</a>: {item.summary}</li>)}
         </ul>
       </>
     )}

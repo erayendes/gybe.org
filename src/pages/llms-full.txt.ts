@@ -33,7 +33,8 @@ export function GET() {
     ...members
       .filter((member) => member.status === status)
       .map((member) => {
-        const projects = member.projects.length > 0 ? ` Related projects: ${member.projects.join(", ")}.` : "";
+        const related = crossingPaths.filter((item) => item.members.includes(member.slug));
+        const projects = related.length > 0 ? ` Related projects: ${related.map((item) => item.title).join(", ")}.` : "";
         return `- ${member.name} (${member.role}; ${member.years}): ${member.summary}${projects} ${site}/members/${member.slug}/`;
       }),
     "",
@@ -50,6 +51,7 @@ export function GET() {
     `- Connection: ${item.relation}`,
     `- Summary: ${item.summary}`,
     ...(item.discography?.length ? [`- Records: ${item.discography.join("; ")}`] : []),
+    ...(item.shows?.dates ?? []).map((show) => `- Upcoming show: ${show.date}: ${show.city}, ${show.country} at ${show.venue}${show.soldOut ? " (sold out)" : ""}. Tickets/source: ${show.ticketUrl}`),
     "",
   ]);
 

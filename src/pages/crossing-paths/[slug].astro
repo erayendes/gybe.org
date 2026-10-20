@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { crossingPaths } from "../../data/crossingPaths";
+import { members } from "../../data/members";
 
 export function getStaticPaths() {
   return crossingPaths.map((item) => ({
@@ -11,26 +12,65 @@ export function getStaticPaths() {
 
 const { item } = Astro.props;
 const description = item.summary;
+const pageUrl = `https://gybe.org/crossing-paths/${item.slug}/`;
+const linkedMembers = members.filter((member) => item.members.includes(member.slug));
+const upcoming = item.shows?.dates ?? [];
+const groupRef = { "@type": "MusicGroup", "@id": `${pageUrl}#group`, name: item.title };
 const structuredData = [
   {
     "@context": "https://schema.org",
     "@type": "MusicGroup",
+    "@id": groupRef["@id"],
     name: item.title,
-    url: `https://gybe.org/crossing-paths/${item.slug}/`,
+    url: pageUrl,
     description: item.summary,
+    ...(item.founded && { foundingDate: item.founded }),
     subjectOf: {
       "@type": "WebPage",
-      url: `https://gybe.org/crossing-paths/${item.slug}/`,
+      url: pageUrl,
     },
+    ...(linkedMembers.length > 0 && {
+      member: linkedMembers.map((member) => ({
+        "@type": "Person",
+        name: member.name,
+        url: `https://gybe.org/members/${member.slug}/`,
+      })),
+    }),
     sameAs: item.links.map((link) => link.url),
   },
+  ...upcoming.map((show) => ({
+    "@context": "https://schema.org",
+    "@type": "MusicEvent",
+    name: `${item.title} - ${show.city}`,
+    startDate: show.date,
+    endDate: show.date,
+    description: `${item.title} live at ${show.venue} in ${show.city}, ${show.country}.`,
+    url: show.ticketUrl,
+    eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+    eventStatus: "https://schema.org/EventScheduled",
+    performer: groupRef,
+    offers: {
+      "@type": "Offer",
+      url: show.ticketUrl,
+      ...(show.soldOut && { availability: "https://schema.org/SoldOut" }),
+    },
+    location: {
+      "@type": "Place",
+      name: show.venue,
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: show.city,
+        addressCountry: show.country,
+      },
+    },
+  })),
   {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Home", item: "https://gybe.org/" },
       { "@type": "ListItem", position: 2, name: "Crossing paths", item: "https://gybe.org/crossing-paths/" },
-      { "@type": "ListItem", position: 3, name: item.title, item: `https://gybe.org/crossing-paths/${item.slug}/` },
+      { "@type": "ListItem", position: 3, name: item.title, item: pageUrl },
     ],
   },
 ];
@@ -52,12 +92,65 @@ const structuredData = [
     <h2>profile</h2>
     {item.body.map((paragraph) => <p>{paragraph}</p>)}
 
+    {(item.founded || item.active || item.origin) && (
+      <table class="status-table">
+        <tbody>
+          {item.origin && <tr><th>origin</th><td>{item.origin}</td></tr>}
+          {item.founded && <tr><th>formed</th><td>{item.founded}</td></tr>}
+          {item.active && <tr><th>active</th><td>{item.active}</td></tr>}
+        </tbody>
+      </table>
+    )}
+
+    {linkedMembers.length > 0 && (
+      <>
+        <h2>gy!be members</h2>
+        <ul>
+          {linkedMembers.map((member) => <li><a href={`/members/${member.slug}/`}>{member.name}</a> ({member.role})</li>)}
+        </ul>
+      </>
+    )}
+
     {item.discography.length > 0 && (
       <>
         <h2>selected discography</h2>
         <ul>
           {item.discography.map((release) => <li>{release}</li>)}
         </ul>
+      </>
+    )}
+
+    {item.shows && (
+      <>
+        <h2>upcoming shows</h2>
+        {upcoming.length > 0 ? (
+          <table class="status-table">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>City</th>
+                <th>Venue / festival</th>
+                <th>Link</th>
+              </tr>
+            </thead>
+            <tbody>
+              {upcoming.map((show) => (
+                <tr>
+                  <td>{show.displayDate}</td>
+                  <td>{show.city}, {show.country}</td>
+                  <td>{show.venue}{show.soldOut && " (sold out)"}</td>
+                  <td><a href={show.ticketUrl} target="_blank" rel="noopener noreferrer">ticket/source</a></td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        ) : (
+          <p>No upcoming dates were listed at the source when last checked.</p>
+        )}
+        <p class="side-note">
+          Source: <a href={item.shows.sourceUrl} target="_blank" rel="noopener noreferrer">{item.shows.source}</a><br />
+          Last checked: {item.shows.lastChecked}. Confirm dates with the official source before travelling.
+        </p>
       </>
     )}
 

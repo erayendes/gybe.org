@@ -1,6 +1,38 @@
-export const crossingPaths = [
+export type ProjectShow = {
+  date: string;
+  displayDate: string;
+  city: string;
+  country: string;
+  venue: string;
+  ticketUrl: string;
+  soldOut?: boolean;
+};
+
+export type CrossingPath = {
+  slug: string;
+  /** Slugs from members.ts; drives the links on member and project pages. */
+  members: string[];
+  title: string;
+  relation: string;
+  origin?: string;
+  founded?: string;
+  active?: string;
+  summary: string;
+  body: string[];
+  discography: string[];
+  links: { label: string; url: string }[];
+  shows?: {
+    source: string;
+    sourceUrl: string;
+    lastChecked: string;
+    dates: ProjectShow[];
+  };
+};
+
+export const crossingPaths: CrossingPath[] = [
   {
     slug: "thee-silver-mt-zion-memorial-orchestra",
+    members: ["efrim-menuck", "thierry-amar", "sophie-trudeau"],
     title: "Thee Silver Mt. Zion Memorial Orchestra",
     relation: "Efrim Menuck, Sophie Trudeau, Thierry Amar and others",
     summary: "The most visible GY!BE-adjacent project: more vocal, more openly wounded, and still built from communal crescendos.",
@@ -25,6 +57,7 @@ export const crossingPaths = [
   },
   {
     slug: "set-fire-to-flames",
+    members: ["efrim-menuck", "mike-moya", "david-bryant", "sophie-trudeau", "bruce-cawdron"],
     title: "Set Fire to Flames",
     relation: "GY!BE and Montreal collective members",
     summary: "A loose, haunted recording project built from room tone, fragments, and collective improvisation.",
@@ -44,6 +77,7 @@ export const crossingPaths = [
   },
   {
     slug: "esmerine",
+    members: ["bruce-cawdron"],
     title: "Esmerine",
     relation: "Bruce Cawdron and Rebecca Foon",
     summary: "A chamber-oriented project connected to the same Montreal experimental network.",
@@ -68,6 +102,7 @@ export const crossingPaths = [
   },
   {
     slug: "black-ox-orkestar",
+    members: ["thierry-amar"],
     title: "Black Ox Orkestar",
     relation: "Thierry Amar",
     summary: "A project drawing from Yiddish, folk, and chamber traditions within the Constellation orbit.",
@@ -84,6 +119,7 @@ export const crossingPaths = [
   },
   {
     slug: "hrsta",
+    members: ["mike-moya"],
     title: "Hrsta",
     relation: "Mike Moya",
     summary: "Mike Moya's project, moving through experimental rock, drone, and intimate song forms.",
@@ -100,6 +136,7 @@ export const crossingPaths = [
   },
   {
     slug: "fly-pan-am",
+    members: ["roger-tellier-craig"],
     title: "Fly Pan Am",
     relation: "Roger Tellier-Craig",
     summary: "An experimental rock group with a sharper, more fragmented rhythmic vocabulary.",
@@ -116,6 +153,7 @@ export const crossingPaths = [
   },
   {
     slug: "hangedup",
+    members: [],
     title: "Hangedup",
     relation: "Constellation / Montreal experimental network",
     summary: "A viola-and-percussion duo tied to Constellation's heavier chamber-experimental side.",
@@ -132,6 +170,7 @@ export const crossingPaths = [
   },
   {
     slug: "1-speed-bike",
+    members: ["aidan-girt"],
     title: "1-Speed Bike",
     relation: "Aidan Girt",
     summary: "Aidan Girt's electronic and percussion-driven solo project.",
@@ -147,6 +186,7 @@ export const crossingPaths = [
   },
   {
     slug: "sackville",
+    members: [],
     title: "Sackville",
     relation: "Thierry Amar / Montreal scene",
     summary: "A Montreal folk-rock node from the same 1990s independent music map.",
@@ -162,6 +202,7 @@ export const crossingPaths = [
   },
   {
     slug: "lhasa-de-sela",
+    members: [],
     title: "Lhasa de Sela",
     relation: "Montreal scene",
     summary: "A Montreal-based songwriter whose work crossed the same independent music map.",
@@ -178,6 +219,7 @@ export const crossingPaths = [
   },
   {
     slug: "triple-burner",
+    members: [],
     title: "Triple Burner",
     relation: "Eric Craven and Harris Newman",
     summary: "A small acoustic project where folk instrumentation meets minimalist and experimental guitar language.",
@@ -193,6 +235,7 @@ export const crossingPaths = [
   },
   {
     slug: "saltland",
+    members: [],
     title: "Saltland",
     relation: "Rebecca Foon / Silver Mt. Zion and Esmerine network",
     summary: "Rebecca Foon's solo project, built from cello, voice, electronics, and ecological grief.",
@@ -209,6 +252,7 @@ export const crossingPaths = [
   },
   {
     slug: "hiss-tracts",
+    members: ["david-bryant"],
     title: "Hiss Tracts",
     relation: "David Bryant",
     summary: "A soundscape-oriented project linked to David Bryant's post-GY!BE work.",
@@ -225,6 +269,7 @@ export const crossingPaths = [
   },
   {
     slug: "exhaust",
+    members: ["aidan-girt"],
     title: "Exhaust",
     relation: "Aidan Girt",
     summary: "A raw experimental trio connected through Aidan Girt and the Montreal underground.",
@@ -241,6 +286,7 @@ export const crossingPaths = [
   },
   {
     slug: "vic-chesnutt",
+    members: [],
     title: "Vic Chesnutt",
     relation: "Constellation collaboration context",
     summary: "A songwriter whose late recordings brought Silver Mt. Zion and GY!BE-adjacent musicians into his orbit.",
@@ -256,6 +302,7 @@ export const crossingPaths = [
   },
   {
     slug: "jerusalem-in-my-heart",
+    members: ["karl-lemieux"],
     title: "Jerusalem In My Heart",
     relation: "Karl Lemieux / Constellation and Montreal audiovisual network",
     summary: "A multisensory project from the wider Constellation orbit, led by Radwan Ghazi Moumneh.",
@@ -272,6 +319,7 @@ export const crossingPaths = [
   },
   {
     slug: "clues",
+    members: [],
     title: "Clues",
     relation: "Constellation / Montreal indie network",
     summary: "A short-lived Montreal indie-rock group from the wider Constellation map.",

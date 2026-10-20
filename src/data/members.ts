@@ -5,7 +5,6 @@ export const members = [
     role: "electric guitars, keyboards, tape loops",
     years: "1994-2003, 2010-present",
     status: "current",
-    projects: ["Thee Silver Mt. Zion", "Set Fire to Flames"],
     summary: "Founding member and one of the central musical and ideological voices around GY!BE and Hotel2Tango.",
     bio: [
       "Efrim Menuck is one of the founding figures of Godspeed You! Black Emperor and a central presence in the band's musical language: long guitar lines, tape material, keyboard color, and a preference for collective scale over front-person structure.",
@@ -19,7 +18,6 @@ export const members = [
     role: "electric bass",
     years: "1994-2003, 2010-present",
     status: "current",
-    projects: [],
     summary: "Founding bassist and a constant figure in the band's long collective history.",
     bio: [
       "Mauro Pezzente is one of GY!BE's founding members, alongside Efrim Menuck and Mike Moya. His bass work anchors the band's early trio history and remains part of the reunited lineup.",
@@ -33,7 +31,6 @@ export const members = [
     role: "electric guitars",
     years: "1994-1998, 2010-present",
     status: "current",
-    projects: ["Hrsta", "Set Fire to Flames"],
     summary: "Founding guitarist whose related work extends into several Montreal experimental projects.",
     bio: [
       "Mike Moya helped form Godspeed You! Black Emperor in 1994 and played guitar during the band's early development. He returned when the group became active again in 2010.",
@@ -47,7 +44,6 @@ export const members = [
     role: "electric bass, upright bass",
     years: "1997-2003, 2010-present",
     status: "current",
-    projects: ["Thee Silver Mt. Zion", "Black Ox Orkestar"],
     summary: "A key low-end and orchestral presence in GY!BE's expanded ensemble sound.",
     bio: [
       "Thierry Amar joined GY!BE during the expansion from a small group into a larger ensemble. His bass work, both electric and upright, helped give the band its heavy orchestral weight.",
@@ -61,7 +57,6 @@ export const members = [
     role: "electric guitars, tape loops, synthesizer",
     years: "1997-2003, 2010-present",
     status: "current",
-    projects: ["Set Fire to Flames", "Hiss Tracts"],
     summary: "Guitarist and tape-loop contributor associated with the band's atmospheric architecture.",
     bio: [
       "David Bryant joined GY!BE in the late 1990s, contributing guitar, tape-loop work, and later electronic texture during the period that produced the band's best-known early records.",
@@ -75,7 +70,6 @@ export const members = [
     role: "drums, percussion",
     years: "1997-2003, 2010-present",
     status: "current",
-    projects: ["Exhaust", "1-Speed Bike"],
     summary: "Percussionist whose related work also moves through electronic and experimental forms.",
     bio: [
       "Aidan Girt is one of GY!BE's long-running percussionists, joining during the band's first major expansion. His drumming is part of the band's ability to move from near-stillness into overwhelming ensemble force.",
@@ -89,7 +83,6 @@ export const members = [
     role: "violins, organ",
     years: "1997-2003, 2010-present",
     status: "current",
-    projects: ["Thee Silver Mt. Zion", "Set Fire to Flames"],
     summary: "Violinist whose melodic lines are central to the band's chamber-rock force.",
     bio: [
       "Sophie Trudeau joined GY!BE in the late 1990s and became one of the most recognizable instrumental voices in the ensemble. Her violin lines often carry the melodic and emotional center of the band's long-form pieces.",
@@ -103,7 +96,6 @@ export const members = [
     role: "16mm projections",
     years: "2010-present",
     status: "current",
-    projects: ["Jerusalem In My Heart"],
     summary: "Projection artist contributing to the 16mm visual world of post-reunion performances.",
     bio: [
       "Karl Lemieux is a filmmaker, projection artist, and musician whose live 16mm work became part of GY!BE's post-reunion stage language.",
@@ -117,7 +109,6 @@ export const members = [
     role: "drums, glockenspiel",
     years: "2012-present",
     status: "current",
-    projects: [],
     summary: "Drummer adding another layer to the post-reunion live rhythm section.",
     bio: [
       "Timothy Herzog joined GY!BE's post-reunion lineup as a drummer and percussionist, adding to the band's already dense rhythm section.",
@@ -131,7 +122,6 @@ export const members = [
     role: "16mm projections",
     years: "2015-present",
     status: "current",
-    projects: [],
     summary: "Projection artist extending the band's live image practice.",
     bio: [
       "Philippe Leonard is a projection artist associated with GY!BE's later live performances. His work continues the band's long relationship with film, light, and stage imagery.",
@@ -145,7 +135,6 @@ export const members = [
     role: "french horn",
     years: "1995-1997",
     status: "former",
-    projects: [],
     summary: "Early horn contributor during the formative ensemble years.",
     bio: [
       "Thea Pratt contributed French horn during GY!BE's early expansion, before the band settled into the better-known late-1990s lineup.",
@@ -158,7 +147,6 @@ export const members = [
     role: "drums",
     years: "1995",
     status: "former",
-    projects: [],
     summary: "Early drummer from the first exploratory period of the group.",
     bio: [
       "Dano LeBlanc is listed among GY!BE's early former members, connected to the brief and shifting lineup period before the classic ensemble stabilized.",
@@ -171,7 +159,6 @@ export const members = [
     role: "violin",
     years: "before 1997",
     status: "former",
-    projects: [],
     summary: "Early violin contributor before the better-documented late-1990s lineup.",
     bio: [
       "Jesse Pratt is listed as a former violin contributor from the band's early period, before the lineup associated with the first major releases settled.",
@@ -184,7 +171,6 @@ export const members = [
     role: "drums, percussion",
     years: "1997-2003, 2010-2012",
     status: "former",
-    projects: ["Esmerine", "Set Fire to Flames"],
     summary: "Percussionist linked to the band's classic era and several related projects.",
     bio: [
       "Bruce Cawdron was a percussionist in GY!BE during the classic era and returned for the early post-hiatus period. His playing helped define the band's layered, marching, and ritual-like rhythmic force.",
@@ -198,7 +184,6 @@ export const members = [
     role: "cello",
     years: "1997-2003",
     status: "former",
-    projects: [],
     summary: "Cellist whose playing helped define the early orchestral weight of the group.",
     bio: [
       "Norsola Johnson played cello in GY!BE during the group's major early period. Her instrument added depth to the string section and helped separate the band from guitar-only post-rock formations.",
@@ -212,7 +197,6 @@ export const members = [
     role: "accordion",
     years: "1997",
     status: "former",
-    projects: [],
     summary: "Short-term accordion contributor from the early collective period.",
     bio: [
       "Grayson Walker is listed as an early accordion contributor during the band's formative collective period.",
@@ -225,7 +209,6 @@ export const members = [
     role: "violin",
     years: "1997",
     status: "former",
-    projects: [],
     summary: "Early violin contributor during the 1997 expansion.",
     bio: [
       "Christophe Comte is listed among the band's former violin contributors from 1997, a year when the ensemble was expanding quickly.",
@@ -238,7 +221,6 @@ export const members = [
     role: "guitar",
     years: "1998-2003",
     status: "former",
-    projects: ["Fly Pan Am"],
     summary: "Guitarist and experimental musician tied closely to the broader Constellation/Montreal network.",
     bio: [
       "Roger Tellier-Craig played guitar in GY!BE from the late 1990s through the pre-hiatus period. His tenure overlaps with the records that established the band's international reputation.",
@@ -252,7 +234,6 @@ export const members = [
     role: "film projections",
     years: "1996-1997",
     status: "former",
-    projects: [],
     summary: "Early projection duo credited in the band's live visual history.",
     bio: [
       "Flux Lux, credited as Ken Doolittle and Debby Salvador, appears in the former-member record as part of the band's early projection history.",
@@ -265,7 +246,6 @@ export const members = [
     role: "film projections",
     years: "1997-1998",
     status: "former",
-    projects: [],
     summary: "Projection contributor from the late-1990s live period.",
     bio: [
       "Lee Schnaiberg is listed among the projection contributors from the late-1990s live period.",
@@ -278,7 +258,6 @@ export const members = [
     role: "film projections",
     years: "1998-2000",
     status: "former",
-    projects: [],
     summary: "Early projection contributor to the band's live visual language.",
     bio: [
       "Mark Littlefair was part of the early GY!BE live presentation as a film projection contributor. Projection work was present from the band's formative period, shaping concerts as immersive audiovisual events rather than standard rock shows.",
@@ -291,7 +270,6 @@ export const members = [
     role: "film projections",
     years: "2000-2002",
     status: "former",
-    projects: [],
     summary: "Projection contributor during the pre-hiatus live period.",
     bio: [
       "Jean-Sebastian Truchy is listed as a projection contributor during the pre-hiatus years.",
@@ -304,7 +282,6 @@ export const members = [
     role: "film projections",
     years: "2003",
     status: "former",
-    projects: [],
     summary: "Projection contributor during the pre-hiatus years.",
     bio: [
       "Fluffy Erskine contributed film projections during the pre-hiatus years, when GY!BE's live presentation had become a full audiovisual environment.",
