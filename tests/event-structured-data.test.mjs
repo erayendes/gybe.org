@@ -16,6 +16,7 @@ test("every music event includes Google's recommended event details", () => {
     assert.deepEqual(event.image, ["https://gybe.org/images/site/live-stage.jpg"], `${event.name}: image`);
     assert.equal(event.offers?.["@type"], "Offer", `${event.name}: offers type`);
     assert.equal(event.offers?.url, event.url, `${event.name}: offers URL`);
+    assert.match(event.offers?.availability, /schema.org\/(InStock|SoldOut)$/, `${event.name}: offers availability`);
     assert.equal(event.organizer?.["@type"], "Organization", `${event.name}: organizer type`);
     assert.ok(event.organizer?.name, `${event.name}: organizer name`);
     assert.ok(event.organizer?.url, `${event.name}: organizer URL`);

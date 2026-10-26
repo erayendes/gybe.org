@@ -18,7 +18,7 @@ const structuredData = shows.dates.map((show) => ({
   offers: {
     "@type": "Offer",
     url: show.ticketUrl,
-    ...(show.soldOut && { availability: "https://schema.org/SoldOut" }),
+    availability: show.soldOut ? "https://schema.org/SoldOut" : "https://schema.org/InStock",
   },
   organizer: {
     "@type": "Organization",

@@ -54,7 +54,7 @@ const structuredData = [
     offers: {
       "@type": "Offer",
       url: show.ticketUrl,
-      ...(show.soldOut && { availability: "https://schema.org/SoldOut" }),
+      availability: show.soldOut ? "https://schema.org/SoldOut" : "https://schema.org/InStock",
     },
     location: {
       "@type": "Place",
