@@ -1,7 +1,7 @@
 export const shows = {
   source: "Constellation Live",
   sourceUrl: "https://cstrecords.com/pages/live",
-  lastChecked: "2026-10-15",
+  lastChecked: "2026-10-26",
   updateMode: "Checked weekly against Constellation Live and published automatically.",
   dates: [
     {
@@ -66,6 +66,36 @@ export const shows = {
       ticketUrl: "https://www.ticketmaster.ca/event/3100652471741B58?lang=fr-ca"
     },
     {
+      date: "2027-02-22",
+      displayDate: "22 Feb 2027",
+      city: "Montréal",
+      country: "Canada",
+      venue: "Club Soda",
+      organizer: "Club Soda",
+      organizerUrl: "https://clubsoda.ca/fr/evenements/godspeed-you-black-emperor",
+      ticketUrl: "https://clubsoda.ca/fr/evenements/godspeed-you-black-emperor"
+    },
+    {
+      date: "2027-02-23",
+      displayDate: "23 Feb 2027",
+      city: "Montréal",
+      country: "Canada",
+      venue: "Club Soda",
+      organizer: "Club Soda",
+      organizerUrl: "https://clubsoda.ca/fr/evenements/godspeed-you-black-emperor",
+      ticketUrl: "https://clubsoda.ca/fr/evenements/godspeed-you-black-emperor"
+    },
+    {
+      date: "2027-02-24",
+      displayDate: "24 Feb 2027",
+      city: "Montréal",
+      country: "Canada",
+      venue: "Club Soda",
+      organizer: "Club Soda",
+      organizerUrl: "https://clubsoda.ca/fr/evenements/godspeed-you-black-emperor",
+      ticketUrl: "https://clubsoda.ca/fr/evenements/godspeed-you-black-emperor"
+    },
+    {
       date: "2027-02-26",
       displayDate: "26 Feb 2027",
       city: "Toronto",
@@ -84,6 +114,26 @@ export const shows = {
       organizer: "Danforth Music Hall",
       organizerUrl: "https://www.ticketmaster.ca/event/10006521D6E96D34",
       ticketUrl: "https://www.ticketmaster.ca/event/10006521D6E96D34"
+    },
+    {
+      date: "2027-03-03",
+      displayDate: "3 Mar 2027",
+      city: "San Juan",
+      country: "Puerto Rico",
+      venue: "La Respuesta",
+      organizer: "La Respuesta",
+      organizerUrl: "https://boletera.net/event/godspeed-you-black-emperor-en-puerto-rico-7a446aa7-1a37-42b4-bf56-660ef4e74917",
+      ticketUrl: "https://boletera.net/event/godspeed-you-black-emperor-en-puerto-rico-7a446aa7-1a37-42b4-bf56-660ef4e74917"
+    },
+    {
+      date: "2027-03-04",
+      displayDate: "4 Mar 2027",
+      city: "San Juan",
+      country: "Puerto Rico",
+      venue: "La Respuesta",
+      organizer: "La Respuesta",
+      organizerUrl: "https://boletera.net/event/godspeed-you-black-emperor-en-puerto-rico-7a446aa7-1a37-42b4-bf56-660ef4e74917",
+      ticketUrl: "https://boletera.net/event/godspeed-you-black-emperor-en-puerto-rico-7a446aa7-1a37-42b4-bf56-660ef4e74917"
     },
     {
       date: "2027-07-22",
