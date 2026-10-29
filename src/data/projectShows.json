@@ -9,7 +9,7 @@
         "Thee Silver Mt. Zion Memorial Orchestra",
         "Silver Mt. Zion"
       ],
-      "lastChecked": "2026-10-20",
+      "lastChecked": "2026-10-27",
       "dates": []
     },
     "esmerine": {
@@ -19,7 +19,7 @@
       "match": [
         "Esmerine"
       ],
-      "lastChecked": "2026-10-20",
+      "lastChecked": "2026-10-27",
       "dates": []
     },
     "black-ox-orkestar": {
@@ -29,7 +29,7 @@
       "match": [
         "Black Ox Orkestar"
       ],
-      "lastChecked": "2026-10-20",
+      "lastChecked": "2026-10-27",
       "dates": []
     },
     "hrsta": {
@@ -39,7 +39,7 @@
       "match": [
         "Hrsta"
       ],
-      "lastChecked": "2026-10-20",
+      "lastChecked": "2026-10-27",
       "dates": []
     },
     "fly-pan-am": {
@@ -49,7 +49,7 @@
       "match": [
         "Fly Pan Am"
       ],
-      "lastChecked": "2026-10-20",
+      "lastChecked": "2026-10-27",
       "dates": []
     },
     "hangedup": {
@@ -59,7 +59,7 @@
       "match": [
         "Hangedup"
       ],
-      "lastChecked": "2026-10-20",
+      "lastChecked": "2026-10-27",
       "dates": []
     },
     "1-speed-bike": {
@@ -69,7 +69,7 @@
       "match": [
         "1-Speed Bike"
       ],
-      "lastChecked": "2026-10-20",
+      "lastChecked": "2026-10-27",
       "dates": []
     },
     "sackville": {
@@ -79,7 +79,7 @@
       "match": [
         "Sackville"
       ],
-      "lastChecked": "2026-10-20",
+      "lastChecked": "2026-10-27",
       "dates": []
     },
     "saltland": {
@@ -91,7 +91,7 @@
         "Rebecca Foon",
         "Saltland"
       ],
-      "lastChecked": "2026-10-20",
+      "lastChecked": "2026-10-27",
       "dates": [
         {
           "date": "2026-10-29",
@@ -110,8 +110,16 @@
       "match": [
         "Jessica Moss"
       ],
-      "lastChecked": "2026-10-20",
+      "lastChecked": "2026-10-27",
       "dates": [
+        {
+          "date": "2026-11-03",
+          "displayDate": "3 Nov 2026",
+          "city": "Vienna",
+          "country": "Austria",
+          "venue": "Rhiz (with Moumneh & Oberland)",
+          "ticketUrl": "https://soundcloud.com/rhiz_vienna"
+        },
         {
           "date": "2026-11-04",
           "displayDate": "4 Nov 2026",
@@ -153,7 +161,7 @@
       "match": [
         "Hiss Tracts"
       ],
-      "lastChecked": "2026-10-20",
+      "lastChecked": "2026-10-27",
       "dates": []
     },
     "exhaust": {
@@ -163,7 +171,7 @@
       "match": [
         "Exhaust"
       ],
-      "lastChecked": "2026-10-20",
+      "lastChecked": "2026-10-27",
       "dates": []
     },
     "jerusalem-in-my-heart": {
@@ -173,7 +181,7 @@
       "match": [
         "Jerusalem In My Heart"
       ],
-      "lastChecked": "2026-10-20",
+      "lastChecked": "2026-10-27",
       "dates": []
     },
     "clues": {
@@ -183,7 +191,7 @@
       "match": [
         "Clues"
       ],
-      "lastChecked": "2026-10-20",
+      "lastChecked": "2026-10-27",
       "dates": []
     },
     "efrim-manuel-menuck": {
@@ -194,7 +202,7 @@
         "Efrim Manuel Menuck",
         "Efrim Menuck"
       ],
-      "lastChecked": "2026-10-20",
+      "lastChecked": "2026-10-27",
       "dates": [
         {
           "date": "2027-04-02",
@@ -214,7 +222,7 @@
         "Efrim Manuel Menuck & Tashi Dorji",
         "BLOOM AND RUIN"
       ],
-      "lastChecked": "2026-10-20",
+      "lastChecked": "2026-10-27",
       "dates": [
         {
           "date": "2027-04-01",
@@ -234,7 +242,7 @@
         "SING SINCK, SING",
         "Efrim Manuel Menuck & Kevin Doria"
       ],
-      "lastChecked": "2026-10-20",
+      "lastChecked": "2026-10-27",
       "dates": []
     },
     "all-hands-make-light": {
@@ -244,7 +252,7 @@
       "match": [
         "ALL HANDS_MAKE LIGHT"
       ],
-      "lastChecked": "2026-10-20",
+      "lastChecked": "2026-10-27",
       "dates": []
     },
     "we-are-winters-blue-and-radiant-children": {
@@ -254,7 +262,7 @@
       "match": [
         "WE ARE WINTER'S BLUE AND RADIANT CHILDREN"
       ],
-      "lastChecked": "2026-10-20",
+      "lastChecked": "2026-10-27",
       "dates": []
     },
     "land-of-kush": {
@@ -264,7 +272,7 @@
       "match": [
         "Land Of Kush"
       ],
-      "lastChecked": "2026-10-20",
+      "lastChecked": "2026-10-27",
       "dates": []
     },
     "avec-le-soleil-sortant-de-sa-bouche": {
@@ -274,7 +282,7 @@
       "match": [
         "Avec le soleil sortant de sa bouche"
       ],
-      "lastChecked": "2026-10-20",
+      "lastChecked": "2026-10-27",
       "dates": []
     },
     "some-became-hollow-tubes": {
@@ -284,7 +292,7 @@
       "match": [
         "Some Became Hollow Tubes"
       ],
-      "lastChecked": "2026-10-20",
+      "lastChecked": "2026-10-27",
       "dates": [
         {
           "date": "2026-12-10",
