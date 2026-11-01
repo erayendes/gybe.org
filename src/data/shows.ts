@@ -72,8 +72,8 @@ export const shows = {
       country: "Canada",
       venue: "Club Soda",
       organizer: "Club Soda",
-      organizerUrl: "https://clubsoda.ca/fr/evenements/godspeed-you-black-emperor",
-      ticketUrl: "https://clubsoda.ca/fr/evenements/godspeed-you-black-emperor"
+      organizerUrl: "https://clubsoda.billetteriealacarte.com/",
+      ticketUrl: "https://clubsoda.billetteriealacarte.com/en/buy/godspeed_2027-02-22/"
     },
     {
       date: "2027-02-23",
@@ -82,8 +82,8 @@ export const shows = {
       country: "Canada",
       venue: "Club Soda",
       organizer: "Club Soda",
-      organizerUrl: "https://clubsoda.ca/fr/evenements/godspeed-you-black-emperor",
-      ticketUrl: "https://clubsoda.ca/fr/evenements/godspeed-you-black-emperor"
+      organizerUrl: "https://clubsoda.billetteriealacarte.com/",
+      ticketUrl: "https://clubsoda.billetteriealacarte.com/en/buy/godspeed_2027-02-23/"
     },
     {
       date: "2027-02-24",
@@ -92,8 +92,8 @@ export const shows = {
       country: "Canada",
       venue: "Club Soda",
       organizer: "Club Soda",
-      organizerUrl: "https://clubsoda.ca/fr/evenements/godspeed-you-black-emperor",
-      ticketUrl: "https://clubsoda.ca/fr/evenements/godspeed-you-black-emperor"
+      organizerUrl: "https://clubsoda.billetteriealacarte.com/",
+      ticketUrl: "https://clubsoda.billetteriealacarte.com/en/buy/godspeed_2027-02-24/"
     },
     {
       date: "2027-02-26",
