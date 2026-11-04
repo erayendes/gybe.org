@@ -1,7 +1,7 @@
 export const shows = {
   source: "Constellation Live",
   sourceUrl: "https://cstrecords.com/pages/live",
-  lastChecked: "2026-10-26",
+  lastChecked: "2026-11-04",
   updateMode: "Checked weekly against Constellation Live and published automatically.",
   dates: [
     {
@@ -116,8 +116,8 @@ export const shows = {
       ticketUrl: "https://www.ticketmaster.ca/event/10006521D6E96D34"
     },
     {
-      date: "2027-03-03",
-      displayDate: "3 Mar 2027",
+      date: "2027-03-04",
+      displayDate: "4 Mar 2027",
       city: "San Juan",
       country: "Puerto Rico",
       venue: "La Respuesta",
@@ -126,8 +126,8 @@ export const shows = {
       ticketUrl: "https://boletera.net/event/godspeed-you-black-emperor-en-puerto-rico-7a446aa7-1a37-42b4-bf56-660ef4e74917"
     },
     {
-      date: "2027-03-04",
-      displayDate: "4 Mar 2027",
+      date: "2027-03-05",
+      displayDate: "5 Mar 2027",
       city: "San Juan",
       country: "Puerto Rico",
       venue: "La Respuesta",
