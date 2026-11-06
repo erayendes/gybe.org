@@ -57,12 +57,12 @@ const expected = [
   },
   {
     artist: "Godspeed You! Black Emperor",
-    date: "3 Mar 2027",
+    date: "4 Mar 2027",
     city: "San Juan",
   },
   {
     artist: "Godspeed You! Black Emperor",
-    date: "4 Mar 2027",
+    date: "5 Mar 2027",
     city: "San Juan",
   },
 ];
