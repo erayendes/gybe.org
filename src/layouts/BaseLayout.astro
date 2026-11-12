@@ -7,6 +7,7 @@ const {
   image = "/images/site/live-stage.jpg",
   type = "website",
   structuredData = [],
+  noindex = false,
 } = Astro.props;
 
 const nav = [
@@ -69,7 +70,7 @@ const baseStructuredData = [
   },
 ];
 const pageStructuredData = Array.isArray(structuredData) ? structuredData : [structuredData];
-const allStructuredData = [...baseStructuredData, ...pageStructuredData];
+const allStructuredData = noindex ? [] : [...baseStructuredData, ...pageStructuredData];
 ---
 
 <!doctype html>
@@ -79,15 +80,15 @@ const allStructuredData = [...baseStructuredData, ...pageStructuredData];
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
     <meta name="keywords" content={keywords} />
-    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="robots" content={noindex ? "noindex, follow" : "index, follow, max-image-preview:large"} />
     <meta name="yandex-verification" content="683afebf6e237735" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <link rel="canonical" href={canonicalUrl} />
+    {!noindex && <link rel="canonical" href={canonicalUrl} />}
     <title>{title}</title>
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={imageUrl} />
-    <meta property="og:url" content={canonicalUrl} />
+    {!noindex && <meta property="og:url" content={canonicalUrl} />}
     <meta property="og:type" content={type} />
     <meta property="og:site_name" content="gybe.org" />
     <meta name="twitter:card" content="summary_large_image" />
