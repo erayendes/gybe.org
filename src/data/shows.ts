@@ -1,7 +1,7 @@
 export const shows = {
   source: "Constellation Live",
   sourceUrl: "https://cstrecords.com/pages/live",
-  lastChecked: "2026-11-08",
+  lastChecked: "2026-11-13",
   updateMode: "Checked weekly against Constellation Live and published automatically.",
   dates: [
     {
@@ -20,7 +20,7 @@ export const shows = {
       city: "São Paulo",
       country: "Brazil",
       venue: "Audio",
-      soldOut: true,
+      soldOut: false,
       organizer: "Balaclava",
       organizerUrl: "https://ingresse.com/godspeed-sp/",
       ticketUrl: "https://ingresse.com/godspeed-sp"
