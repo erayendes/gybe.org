@@ -1,0 +1,34 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+// Vercel serves dist/404.html with status 404 for any unknown address. noindex keeps it out of search,
+// and the page is left out of sitemap.xml.
+const sections = [
+  ["discography", "/disco/", "Every record, with sources and official links."],
+  ["shows", "/shows/", "Upcoming and recent live dates."],
+  ["members", "/members/", "Everyone who has played in the band."],
+  ["crossing-paths", "/crossing-paths/", "Side projects and related Montreal paths."],
+  ["about", "/about/", "What this archive is and how it is sourced."],
+];
+---
+
+<BaseLayout
+  title="Page Not Found | gybe.org"
+  description="This page does not exist on gybe.org. Try the discography, live dates, members or crossing-paths sections of the fan archive instead."
+  noindex
+>
+  <article class="content">
+    <h1 class="page-title">page not found</h1>
+    <p class="deck">
+      There is nothing at this address. It may have moved, or the link may have a typo. Start from the <a href="/">home page</a> or one of the sections below.
+    </p>
+    <ul>
+      {sections.map(([label, href, text]) => (
+        <li><a href={href}>{label}</a>: {text}</li>
+      ))}
+    </ul>
+    <p>
+      If a link on this site brought you here, please <a href="/contact/">tell us</a> so it can be fixed.
+    </p>
+  </article>
+</BaseLayout>
