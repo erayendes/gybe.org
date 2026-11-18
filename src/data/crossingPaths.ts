@@ -8,6 +8,9 @@ export type ProjectShow = {
   venue: string;
   ticketUrl: string;
   soldOut?: boolean;
+  /** Promoter as named on the ticket page; only set when a source states it. */
+  organizer?: string;
+  organizerUrl?: string;
 };
 
 export type ProjectShowList = {

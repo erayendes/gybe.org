@@ -160,7 +160,9 @@
           "city": "Knoxville, TN",
           "country": "USA",
           "venue": "Big Ears Festival (venue TBA)",
-          "ticketUrl": "https://bigearsfestival.org/event/efrim-manuel-menuck/"
+          "ticketUrl": "https://bigearsfestival.org/event/efrim-manuel-menuck/",
+          "organizer": "Big Ears Festival",
+          "organizerUrl": "https://bigearsfestival.org/"
         }
       ]
     },
@@ -180,7 +182,9 @@
           "city": "Knoxville, TN",
           "country": "USA",
           "venue": "Big Ears Festival (venue TBA)",
-          "ticketUrl": "https://bigearsfestival.org/event/efrim-manuel-menuck-and-tashi-dorji-present-bloom-and-ruin/"
+          "ticketUrl": "https://bigearsfestival.org/event/efrim-manuel-menuck-and-tashi-dorji-present-bloom-and-ruin/",
+          "organizer": "Big Ears Festival",
+          "organizerUrl": "https://bigearsfestival.org/"
         }
       ]
     },
@@ -250,7 +254,9 @@
           "city": "Sherbrooke, QC",
           "country": "Canada",
           "venue": "La Petite Boite Noire (with Cloud Circuit)",
-          "ticketUrl": "https://lepointdevente.com/billets/pbn261210001"
+          "ticketUrl": "https://lepointdevente.com/billets/pbn261210001",
+          "organizer": "La Petite Boîte Noire",
+          "organizerUrl": "https://lapetiteboitenoire.com/"
         },
         {
           "date": "2026-12-11",

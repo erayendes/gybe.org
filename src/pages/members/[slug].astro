@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import { seoDescription } from "../../lib/seoDescription";
 import { members } from "../../data/members";
 import { crossingPaths } from "../../data/crossingPaths";
 import { bandRef } from "../../data/band";
@@ -12,7 +13,10 @@ export function getStaticPaths() {
 }
 
 const { member } = Astro.props;
-const description = member.summary;
+const description = seoDescription(member.summary, [
+  `${member.status === "current" ? "Plays" : "Played"} ${member.role} in Godspeed You! Black Emperor (${member.years})`,
+  "Bio, side projects and official links",
+]);
 const related = crossingPaths.filter((item) => item.members.includes(member.slug));
 const projectContext = related.length > 0
   ? `Related projects listed here: ${related.map((item) => item.title).join(", ")}. These links place the member inside the wider Montreal and Constellation-adjacent network rather than treating the GY!BE lineup as an isolated roster.`
