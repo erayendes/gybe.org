@@ -7,6 +7,18 @@ import { shows } from "../data/shows";
 
 const newest = albums[albums.length - 1];
 const currentMembers = members.filter((member) => member.status === "current");
+// Title and description follow the show list, so they stay true when dates change.
+const buildDay = new Date().toISOString().slice(0, 10);
+const upcomingDates = shows.dates.filter((show) => (show.endDate ?? show.date) >= buildDay);
+const showYears = [...new Set(upcomingDates.map((show) => show.date.slice(0, 4)))];
+const yearSpan = showYears.length > 1 ? `${showYears[0]}-${showYears[showYears.length - 1].slice(2)}` : showYears[0];
+const showCountries = new Set(upcomingDates.map((show) => show.country)).size;
+const homeTitle = yearSpan
+  ? `GY!BE Tour Dates ${yearSpan}, Records & Members | gybe.org`
+  : "GY!BE Records, Members & Live Dates | gybe.org";
+const homeDescription = upcomingDates.length
+  ? `Godspeed You! Black Emperor fan archive: ${upcomingDates.length} upcoming shows in ${showCountries} countries with ticket links, every record with track lists, and all members.`
+  : "Godspeed You! Black Emperor fan archive: every record with track lists, live dates with ticket links, current and former members, and side projects.";
 const structuredData = [
   {
     "@context": "https://schema.org",
@@ -23,8 +35,8 @@ const structuredData = [
 ---
 
 <BaseLayout
-  title="Godspeed You! Black Emperor Fan Archive / gybe.org"
-  description="A source-minded Godspeed You! Black Emperor fan archive for records, live dates, members, side projects, and related Montreal paths."
+  title={homeTitle}
+  description={homeDescription}
   structuredData={structuredData}
 >
   <section class="hero">

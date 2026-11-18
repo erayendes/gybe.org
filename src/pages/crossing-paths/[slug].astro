@@ -2,6 +2,7 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { crossingPaths, showsFor, upcomingShows } from "../../data/crossingPaths";
 import { members } from "../../data/members";
+import { seoDescription } from "../../lib/seoDescription";
 
 export function getStaticPaths() {
   return crossingPaths.map((item) => ({
@@ -11,7 +12,12 @@ export function getStaticPaths() {
 }
 
 const { item } = Astro.props;
-const description = item.summary;
+const description = seoDescription(item.summary, [
+  `Connection: ${item.relation}`,
+  item.origin && (item.founded ? `Formed in ${item.origin} in ${item.founded}` : `From ${item.origin}`),
+  item.discography[0] && `Records include ${item.discography[0]}`,
+  "Members, records and official links",
+]);
 const pageUrl = `https://gybe.org/crossing-paths/${item.slug}/`;
 const linkedMembers = members.filter((member) => item.members.includes(member.slug));
 const tracked = showsFor(item);
@@ -56,6 +62,9 @@ const structuredData = [
       url: show.ticketUrl,
       availability: show.soldOut ? "https://schema.org/SoldOut" : "https://schema.org/InStock",
     },
+    ...(show.organizer && {
+      organizer: { "@type": "Organization", name: show.organizer, ...(show.organizerUrl && { url: show.organizerUrl }) },
+    }),
     location: {
       "@type": "Place",
       name: show.venue,

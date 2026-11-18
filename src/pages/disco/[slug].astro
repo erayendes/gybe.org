@@ -2,6 +2,7 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import AlbumEmbed from "../../components/AlbumEmbed.astro";
 import { albums } from "../../data/albums";
+import { seoDescription } from "../../lib/seoDescription";
 import { bandRef } from "../../data/band";
 
 export function getStaticPaths() {
@@ -17,6 +18,11 @@ const seoTitles: Record<string, string> = {
   "lift-your-skinny-fists-like-antennas-to-heaven": "Lift Your Skinny Fists | GY!BE Album",
   "no-title-as-of-13-february-2024-28-340-dead": "NO TITLE (2024) | GY!BE Album",
 };
+const description = seoDescription(album.summary, [
+  `${album.kind.charAt(0).toUpperCase()}${album.kind.slice(1)}, ${album.year}`,
+  `Label: ${album.label}`,
+  "Track list, notes, cover art and official links",
+]);
 const pageTitle = seoTitles[album.slug] ?? `${album.title} | GY!BE Album`;
 const imageSize = album.image.includes("all-lights-fucked") || album.image.includes("f-sharp-a-sharp-infinity")
   ? { width: 700, height: 700 }
@@ -75,7 +81,7 @@ const structuredData = [
 ];
 ---
 
-<BaseLayout title={pageTitle} description={album.summary} image={album.image} type="music.album" structuredData={structuredData}>
+<BaseLayout title={pageTitle} description={description} image={album.image} type="music.album" structuredData={structuredData}>
   <article>
     <nav class="breadcrumb" aria-label="Breadcrumb">
       <a href="/">home</a>
